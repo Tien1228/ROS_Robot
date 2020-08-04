@@ -11,27 +11,35 @@ public class MainActivity extends Activity {
     private Button btGuide;
     private Button btActivity;
     private Button btDiscount;
-    private Button btPerson;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         buildViews();
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 
     private  void buildViews(){
         btGuide = (Button)findViewById(R.id.btGuide);
         btActivity = (Button)findViewById(R.id.btActivity);
         btDiscount = (Button)findViewById(R.id.btDiscount);
-        btPerson = (Button)findViewById(R.id.btPerson);
 
         btGuide.setOnClickListener(new OnClickListener(){
             public void onClick(View v){
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, Guide.class);
+
+                onPause();
                 startActivity(intent);
+                onStop();
             }
         });
 
@@ -39,7 +47,10 @@ public class MainActivity extends Activity {
             public void onClick(View v){
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, rosActivity.class);
+
+                onPause();
                 startActivity(intent);
+                onStop();
             }
         });
 
@@ -47,13 +58,10 @@ public class MainActivity extends Activity {
             public void onClick(View v){
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, Discount.class);
+
+                onPause();
                 startActivity(intent);
-            }
-        });
-
-        btPerson.setOnClickListener(new OnClickListener(){
-            public void onClick(View v){
-
+                onStop();
             }
         });
     }
