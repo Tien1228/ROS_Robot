@@ -8,9 +8,6 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class MainActivity extends Activity {
-    private Button btGuide;
-    private Button btActivity;
-    private Button btDiscount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,42 +23,60 @@ public class MainActivity extends Activity {
     protected void onResume() {
         super.onResume();
     }
+    @Override
+    protected void onPause()
+    {
+        super.onPause();
+    }
+    @Override
+    public void onStop()
+    {
+        super.onStop();
+    }
+    @Override
+    public void onRestart()
+    {
+        super.onRestart();
+    }
+    @Override
+    public void onDestroy()
+    {
+        super.onDestroy();
+    }
 
-    private  void buildViews(){
-        btGuide = (Button)findViewById(R.id.btGuide);
-        btActivity = (Button)findViewById(R.id.btActivity);
-        btDiscount = (Button)findViewById(R.id.btDiscount);
+    private void buildViews() {
+        final Button btGuide;
+        final Button btActivity;
+        final Button btDiscount;
 
-        btGuide.setOnClickListener(new OnClickListener(){
-            public void onClick(View v){
+        btGuide = (Button) findViewById(R.id.btGuide);
+        btActivity = (Button) findViewById(R.id.btActivity);
+        btDiscount = (Button) findViewById(R.id.btDiscount);
+
+        btGuide.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this, Guide.class);
-
-                onPause();
+                intent.setClass(MainActivity.this, Location.class);
                 startActivity(intent);
-                onStop();
             }
         });
 
-        btActivity.setOnClickListener(new OnClickListener(){
-            public void onClick(View v){
+        btActivity.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this, rosActivity.class);
-
-                onPause();
+                intent.setClass(MainActivity.this, Event.class);
                 startActivity(intent);
-                onStop();
             }
         });
 
-        btDiscount.setOnClickListener(new OnClickListener(){
-            public void onClick(View v){
+        btDiscount.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, Discount.class);
-
-                onPause();
                 startActivity(intent);
-                onStop();
             }
         });
     }

@@ -1,24 +1,16 @@
 package com.example.ros;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class Discount extends Page {
-    private Context one = Discount.this;
-    private Class two = MainActivity.class;
-
-    private Button btBrand;
-    private Button btGame;
-    private Button btBack;
-    private Button btHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.discount);
         buildViews();
     }
     @Override
@@ -29,8 +21,35 @@ public class Discount extends Page {
     protected void onResume() {
         super.onResume();
     }
+    @Override
+    protected void onPause()
+    {
+        super.onPause();
+    }
+    @Override
+    public void onStop()
+    {
+        super.onStop();
+    }
+    @Override
+    public void onRestart()
+    {
+        super.onRestart();
+    }
+    @Override
+    public void onDestroy()
+    {
+        super.onDestroy();
+    }
 
     private  void buildViews() {
+        final Class nextPage = MainActivity.class;
+
+        final Button btBrand;
+        final Button btGame;
+        final Button btBack;
+        final Button btHome;
+
         btBrand = (Button) findViewById(R.id.btBrand);
         btGame = (Button) findViewById(R.id.btGame);
         btBack = (Button)findViewById(R.id.btBack);
@@ -38,25 +57,25 @@ public class Discount extends Page {
 
         btBrand.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
-                Discount.super.SwitchPage();
+                Discount.super.SwitchPage(nextPage);
             }
         });
 
         btGame.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
-                Discount.super.SwitchPage();
+                Discount.super.SwitchPage(nextPage);
             }
         });
 
         btBack.setOnClickListener(new OnClickListener(){
             public void onClick(View v){
-                Discount.super.LastPage(one, two);
+                Discount.super.LastPage();
             }
         });
 
         btHome.setOnClickListener(new OnClickListener(){
             public void onClick(View v){
-                Discount.super.HomePage(one);
+                Discount.super.HomePage();
             }
         });
     }

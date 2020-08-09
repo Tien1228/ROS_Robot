@@ -1,24 +1,16 @@
 package com.example.ros;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-public class rosActivity extends Page {
-    private Context one = rosActivity.this;
-    private Class two = MainActivity.class;
-
-    private Button btSpecial;
-    private Button btDM;
-    private Button btBack;
-    private Button btHome;
+public class Event extends Page {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.event);
         buildViews();
     }
     @Override
@@ -29,8 +21,35 @@ public class rosActivity extends Page {
     protected void onResume() {
         super.onResume();
     }
+    @Override
+    protected void onPause()
+    {
+        super.onPause();
+    }
+    @Override
+    public void onStop()
+    {
+        super.onStop();
+    }
+    @Override
+    public void onRestart()
+    {
+        super.onRestart();
+    }
+    @Override
+    public void onDestroy()
+    {
+        super.onDestroy();
+    }
 
     private  void buildViews(){
+        final Class nextPage = MainActivity.class;
+
+        final Button btSpecial;
+        final Button btDM;
+        final Button btBack;
+        final Button btHome;
+
         btSpecial = (Button)findViewById(R.id.btSpecial);
         btDM = (Button)findViewById(R.id.btDM);
         btBack = (Button)findViewById(R.id.btBack);
@@ -38,25 +57,25 @@ public class rosActivity extends Page {
 
         btSpecial.setOnClickListener(new OnClickListener(){
             public void onClick(View v){
-                rosActivity.super.SwitchPage();
+                Event.super.SwitchPage(nextPage);
             }
         });
 
         btDM.setOnClickListener(new OnClickListener(){
             public void onClick(View v){
-                rosActivity.super.SwitchPage();
+                Event.super.SwitchPage(nextPage);
             }
         });
 
         btBack.setOnClickListener(new OnClickListener(){
             public void onClick(View v){
-                rosActivity.super.LastPage(one, two);
+                Event.super.LastPage();
             }
         });
 
         btHome.setOnClickListener(new OnClickListener(){
             public void onClick(View v){
-                rosActivity.super.HomePage(one);
+                Event.super.HomePage();
             }
         });
     }

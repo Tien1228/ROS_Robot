@@ -1,30 +1,25 @@
 package com.example.ros;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 
+
 public class Page extends Activity {
-    public void LastPage(Context one, Class two){
-        Intent intent = new Intent();
-        intent.setClass(one, two);
-
-        onPause();
-        startActivity(intent);
-        onStop();
-        onDestroy();
+    public void LastPage(){
+        finish();
     }
 
-    public void HomePage(Context one){
-        LastPage(one, MainActivity.class);
+    public void HomePage(){
+        Intent intent = new Intent();
+        intent.setClass(this , MainActivity.class);
+        startActivity(intent);
+
+        finish();
     }
 
-    public void SwitchPage(Context first, Class second){
+    public void SwitchPage(Class nextPage){
         Intent intent = new Intent();
-        intent.setClass(first, second);
-
-        onPause();
+        intent.setClass(this , nextPage);
         startActivity(intent);
-        onStop();
     }
 }
