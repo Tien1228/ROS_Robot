@@ -1,10 +1,9 @@
 package com.example.ros;
 
-import android.app.Activity;
 import android.content.Intent;
+import androidx.appcompat.app.AppCompatActivity;
 
-
-public class Page extends Activity {
+public class Page extends AppCompatActivity {
     public void LastPage(){
         finish();
     }
