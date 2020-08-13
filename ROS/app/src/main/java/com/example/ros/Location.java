@@ -1,5 +1,6 @@
 package com.example.ros;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -71,7 +72,14 @@ public class Location extends Page {
 
         btA.setOnClickListener(new OnClickListener(){
             public void onClick(View v){
-                Location.super.SwitchPage(nextPage);
+                Intent intent = new Intent();
+                intent.setClass(Location.this, Brand.class);
+
+                Bundle bundle = new Bundle();
+                bundle.putString("Brand", "a");
+                intent.putExtras(bundle);
+
+                startActivity(intent);
             }
         });
 

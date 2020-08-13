@@ -81,7 +81,7 @@ public class Game extends Page {
     private void Run(int input){
         String st = new String();
 
-        if(0<input&&input<16){
+        if(min<=input&&input<=max){
             if(i == 3){
                 if(input == num){
                     st = "成功!!";

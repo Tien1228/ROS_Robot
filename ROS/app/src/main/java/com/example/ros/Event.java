@@ -52,8 +52,8 @@ public class Event extends Page {
         final Button btBack;
         final Button btHome;
 
-        btSpecial = (Button)findViewById(R.id.btSpecial);
-        btDM = (Button)findViewById(R.id.btDM);
+        btSpecial = (Button)findViewById(R.id.btA);
+        btDM = (Button)findViewById(R.id.btB);
         btBack = (Button)findViewById(R.id.btBack);
         btHome = (Button)findViewById(R.id.btHome);
 

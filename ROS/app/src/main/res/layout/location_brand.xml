@@ -9,7 +9,7 @@
     android:radius="30dp">
 
     <Button
-        android:id="@+id/btDM2"
+        android:id="@+id/btC"
         android:layout_width="220dp"
         android:layout_height="220dp"
         android:layout_centerInParent="true"
@@ -17,7 +17,7 @@
         android:layout_y="266dp"/>
 
     <Button
-        android:id="@+id/btDM3"
+        android:id="@+id/btD"
         android:layout_width="220dp"
         android:layout_height="220dp"
         android:layout_centerInParent="true"
@@ -36,7 +36,7 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/btDM"
+        android:id="@+id/btB"
         android:layout_width="220dp"
         android:layout_height="220dp"
         android:layout_centerInParent="true"
@@ -44,7 +44,7 @@
         android:layout_y="269dp" />
 
     <Button
-        android:id="@+id/btSpecial"
+        android:id="@+id/btA"
         android:layout_width="220dp"
         android:layout_height="220dp"
         android:layout_centerInParent="true"
@@ -110,7 +110,7 @@
         android:background="#B4A5C6" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/arrowr"
+        android:id="@+id/btR"
         android:layout_width="73dp"
         android:layout_height="80dp"
         android:layout_marginBottom="4dp"
@@ -121,7 +121,7 @@
         app:layout_constraintBottom_toTopOf="@+id/homebtn" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/arrowl"
+        android:id="@+id/btL"
         android:layout_width="73dp"
         android:layout_height="80dp"
         android:layout_marginBottom="4dp"
