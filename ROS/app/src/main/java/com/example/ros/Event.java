@@ -11,7 +11,6 @@ public class Event extends Page {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.event);
-        getSupportActionBar().hide();
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
         buildViews();
     }
@@ -52,8 +51,8 @@ public class Event extends Page {
         final Button btBack;
         final Button btHome;
 
-        btSpecial = (Button)findViewById(R.id.btA);
-        btDM = (Button)findViewById(R.id.btB);
+        btSpecial = (Button)findViewById(R.id.bt1);
+        btDM = (Button)findViewById(R.id.bt2);
         btBack = (Button)findViewById(R.id.btBack);
         btHome = (Button)findViewById(R.id.btHome);
 

@@ -20,46 +20,46 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/btB"
-        android:layout_width="235dp"
-        android:layout_height="235dp"
+        android:id="@+id/bt2"
+        android:layout_width="255dp"
+        android:layout_height="255dp"
         android:layout_centerInParent="true"
+        android:layout_x="680dp"
+        android:layout_y="258dp"
         android:alpha="0.4"
-        android:background="@mipmap/dm_foreground"
-        android:layout_x="540dp"
-        android:layout_y="255dp"/>
+        android:background="@mipmap/dm_foreground" />
 
     <Button
-        android:id="@+id/btA"
-        android:layout_width="235dp"
-        android:layout_height="235dp"
+        android:id="@+id/bt1"
+        android:layout_width="255dp"
+        android:layout_height="255dp"
         android:layout_centerInParent="true"
+        android:layout_x="276dp"
+        android:layout_y="258dp"
         android:alpha="0.3"
-        android:background="@mipmap/specialevent_foreground"
-        android:layout_x="171dp"
-        android:layout_y="255dp"/>
+        android:background="@mipmap/specialevent_foreground" />
 
     <TextView
         android:id="@+id/discountbtn"
-        android:layout_width="148dp"
-        android:layout_height="43dp"
+        android:layout_width="177dp"
+        android:layout_height="wrap_content"
+        android:layout_x="722dp"
+        android:layout_y="438dp"
         android:text="當季DM"
         android:textColor="#30082A"
         android:textSize="70px"
-        android:textStyle="bold"
-        android:layout_x="640dp"
-        android:layout_y="438dp"/>
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/eventbtn"
-        android:layout_width="153dp"
-        android:layout_height="49dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="307dp"
+        android:layout_y="438dp"
         android:text="活動快訊"
         android:textColor="#30082A"
         android:textSize="70px"
-        android:textStyle="bold"
-        android:layout_x="253dp"
-        android:layout_y="441dp"/>
+        android:textStyle="bold" />
 
     <ImageView
         android:layout_width="402dp"

@@ -65,45 +65,45 @@
 
     <Button
         android:id="@+id/btGame"
-        android:layout_width="235dp"
-        android:layout_height="235dp"
+        android:layout_width="255dp"
+        android:layout_height="255dp"
         android:layout_centerInParent="true"
+        android:layout_x="751dp"
+        android:layout_y="258dp"
         android:alpha="0.4"
-        android:background="@mipmap/game_foreground"
-        android:layout_x="540dp"
-        android:layout_y="255dp"/>
+        android:background="@mipmap/game_foreground" />
 
     <Button
         android:id="@+id/btBrand"
-        android:layout_width="235dp"
-        android:layout_height="235dp"
+        android:layout_width="255dp"
+        android:layout_height="255dp"
         android:layout_centerInParent="true"
+        android:layout_x="284dp"
+        android:layout_y="258dp"
         android:alpha="0.4"
-        android:background="@mipmap/discount_foreground"
-        android:layout_x="171dp"
-        android:layout_y="255dp"/>
+        android:background="@mipmap/discount_foreground" />
 
     <TextView
         android:id="@+id/discountbtn"
-        android:layout_width="148dp"
-        android:layout_height="43dp"
+        android:layout_width="218dp"
+        android:layout_height="wrap_content"
+        android:layout_x="816dp"
+        android:layout_y="455dp"
         android:text="互動遊戲"
         android:textColor="#30082A"
         android:textSize="70px"
-        android:textStyle="bold"
-        android:layout_x="616dp"
-        android:layout_y="441dp"/>
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/eventbtn"
-        android:layout_width="153dp"
-        android:layout_height="49dp"
+        android:layout_width="225dp"
+        android:layout_height="wrap_content"
+        android:layout_x="342dp"
+        android:layout_y="451dp"
         android:text="品牌優惠"
         android:textColor="#30082A"
         android:textSize="70px"
-        android:textStyle="bold"
-        android:layout_x="253dp"
-        android:layout_y="441dp"/>
+        android:textStyle="bold" />
 
     <ImageView
         android:layout_width="402dp"

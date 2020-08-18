@@ -12,7 +12,6 @@ public class Location extends Page {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.location);
-        getSupportActionBar().hide();
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
         buildViews();
     }
@@ -46,82 +45,129 @@ public class Location extends Page {
     }
 
     private  void buildViews() {
-        final Class nextPage = MainActivity.class;
-
-        final Button btA;
-        final Button btB;
-        final Button btC;
-        final Button btD;
-        final Button btE;
-        final Button btF;
-        final Button btG;
-        final Button btH;
+        final Button bt1;
+        final Button bt2;
+        final Button bt3;
+        final Button bt4;
+        final Button bt5;
+        final Button bt6;
+        final Button bt7;
+        final Button bt8;
         final Button btBack;
         final Button btHome;
 
-        btA = (Button)findViewById(R.id.btA);
-        btB = (Button)findViewById(R.id.btB);
-        btC = (Button)findViewById(R.id.btC);
-        btD = (Button)findViewById(R.id.btD);
-        btE = (Button)findViewById(R.id.btE);
-        btF = (Button)findViewById(R.id.btF);
-        btG = (Button)findViewById(R.id.btG);
-        btH = (Button)findViewById(R.id.btH);
+        bt1 = (Button)findViewById(R.id.bt1);
+        bt2 = (Button)findViewById(R.id.bt2);
+        bt3 = (Button)findViewById(R.id.bt3);
+        bt4 = (Button)findViewById(R.id.bt4);
+        bt5 = (Button)findViewById(R.id.bt5);
+        bt6 = (Button)findViewById(R.id.bt6);
+        bt7 = (Button)findViewById(R.id.bt7);
+        bt8 = (Button)findViewById(R.id.bt8);
         btBack = (Button)findViewById(R.id.btBack);
         btHome = (Button)findViewById(R.id.btHome);
 
-        btA.setOnClickListener(new OnClickListener(){
+        bt1.setOnClickListener(new OnClickListener(){
             public void onClick(View v){
                 Intent intent = new Intent();
                 intent.setClass(Location.this, Brand.class);
 
                 Bundle bundle = new Bundle();
-                bundle.putString("Brand", "a");
+                bundle.putString("BrandType", "1");
                 intent.putExtras(bundle);
 
                 startActivity(intent);
             }
         });
 
-        btB.setOnClickListener(new OnClickListener(){
+        bt2.setOnClickListener(new OnClickListener(){
             public void onClick(View v){
-                Location.super.SwitchPage(nextPage);
+                Intent intent = new Intent();
+                intent.setClass(Location.this, Brand.class);
+
+                Bundle bundle = new Bundle();
+                bundle.putString("BrandType", "2");
+                intent.putExtras(bundle);
+
+                startActivity(intent);
             }
         });
 
-        btC.setOnClickListener(new OnClickListener(){
+        bt3.setOnClickListener(new OnClickListener(){
             public void onClick(View v){
-                Location.super.SwitchPage(nextPage);
+                Intent intent = new Intent();
+                intent.setClass(Location.this, Brand.class);
+
+                Bundle bundle = new Bundle();
+                bundle.putString("BrandType", "3");
+                intent.putExtras(bundle);
+
+                startActivity(intent);
             }
         });
 
-        btD.setOnClickListener(new OnClickListener(){
+        bt4.setOnClickListener(new OnClickListener(){
             public void onClick(View v){
-                Location.super.SwitchPage(nextPage);
+                Intent intent = new Intent();
+                intent.setClass(Location.this, Brand.class);
+
+                Bundle bundle = new Bundle();
+                bundle.putString("BrandType", "4");
+                intent.putExtras(bundle);
+
+                startActivity(intent);
             }
         });
 
-        btE.setOnClickListener(new OnClickListener(){
+        bt5.setOnClickListener(new OnClickListener(){
             public void onClick(View v){
-                Location.super.SwitchPage(nextPage);
+                Intent intent = new Intent();
+                intent.setClass(Location.this, Brand.class);
+
+                Bundle bundle = new Bundle();
+                bundle.putString("BrandType", "5");
+                intent.putExtras(bundle);
+
+                startActivity(intent);
             }
         });
 
-        btF.setOnClickListener(new OnClickListener(){
+        bt6.setOnClickListener(new OnClickListener(){
             public void onClick(View v){
-                Location.super.SwitchPage(nextPage);
+                Intent intent = new Intent();
+                intent.setClass(Location.this, Brand.class);
+
+                Bundle bundle = new Bundle();
+                bundle.putString("BrandType", "6");
+                intent.putExtras(bundle);
+
+                startActivity(intent);
             }
         });
 
-        btG.setOnClickListener(new OnClickListener(){
+        bt7.setOnClickListener(new OnClickListener(){
             public void onClick(View v){
-                Location.super.SwitchPage(nextPage);
+                Intent intent = new Intent();
+                intent.setClass(Location.this, Brand.class);
+
+                Bundle bundle = new Bundle();
+                bundle.putString("BrandType", "7");
+                intent.putExtras(bundle);
+
+                startActivity(intent);
             }
         });
 
-        btH.setOnClickListener(new OnClickListener(){
+        bt8.setOnClickListener(new OnClickListener(){
             public void onClick(View v){
-                Location.super.SwitchPage(nextPage);
+                Intent intent = new Intent();
+                intent.setClass(Location.this, Brand.class);
+
+                Bundle bundle = new Bundle();
+                bundle.putString("BrandType", "8");
+                intent.putExtras(bundle);
+
+                startActivity(intent);
             }
         });
 

@@ -21,66 +21,66 @@
 
     <Button
         android:id="@+id/btGuide"
-        android:layout_width="230dp"
-        android:layout_height="218dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:layout_centerInParent="true"
+        android:layout_x="140dp"
+        android:layout_y="281dp"
         android:alpha="0.5"
-        android:background="@mipmap/departmentstore_foreground"
-        android:layout_x="68dp"
-        android:layout_y="281dp"/>
+        android:background="@mipmap/departmentstore_foreground" />
 
     <Button
         android:id="@+id/btDiscount"
-        android:layout_width="230dp"
-        android:layout_height="218dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:layout_centerInParent="true"
+        android:layout_x="881dp"
+        android:layout_y="281dp"
         android:alpha="0.5"
-        android:background="@mipmap/champagne_foreground"
-        android:layout_x="663dp"
-        android:layout_y="278dp"/>
+        android:background="@mipmap/champagne_foreground" />
 
     <Button
         android:id="@+id/btActivity"
-        android:layout_width="230dp"
-        android:layout_height="218dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:layout_centerInParent="true"
+        android:layout_x="504dp"
+        android:layout_y="281dp"
         android:alpha="0.5"
-        android:background="@mipmap/balloon_foreground"
-        android:layout_x="365dp"
-        android:layout_y="278dp"/>
+        android:background="@mipmap/balloon_foreground" />
 
     <TextView
         android:id="@+id/locationbtn"
-        android:layout_width="156dp"
-        android:layout_height="46dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_x="195dp"
+        android:layout_y="467dp"
         android:text="櫃位導引"
         android:textColor="#30082A"
         android:textSize="70px"
-        android:textStyle="bold"
-        android:layout_x="142dp"
-        android:layout_y="450dp"/>
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/discountbtn"
-        android:layout_width="148dp"
-        android:layout_height="43dp"
+        android:layout_width="208dp"
+        android:layout_height="wrap_content"
+        android:layout_x="931dp"
+        android:layout_y="467dp"
         android:text="折扣優惠"
         android:textColor="#30082A"
         android:textSize="70px"
-        android:textStyle="bold"
-        android:layout_x="745dp"
-        android:layout_y="447dp"/>
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/eventbtn"
-        android:layout_width="153dp"
-        android:layout_height="49dp"
+        android:layout_width="202dp"
+        android:layout_height="wrap_content"
+        android:layout_x="565dp"
+        android:layout_y="467dp"
         android:text="活動快訊"
         android:textColor="#30082A"
         android:textSize="70px"
-        android:textStyle="bold"
-        android:layout_x="442dp"
-        android:layout_y="447dp"/>
+        android:textStyle="bold" />
 
     <ImageView
         android:layout_width="402dp"
