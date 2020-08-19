@@ -1,9 +1,6 @@
 package com.example.ros;
 
-import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,17 +8,18 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.ViewCompat;
 
-//import com.squareup.picasso.Picasso;
-
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.transition.Transition;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -55,10 +53,6 @@ public class Brand extends Page {
     private ImageView imageView2;
     private ImageView imageView3;
     private ImageView imageView4;
-    private Bitmap bitmap1;
-    private Bitmap bitmap2;
-    private Bitmap bitmap3;
-    private Bitmap bitmap4;
     private GifImageView image1;
     private GifImageView image2;
     private GifImageView image3;
@@ -94,6 +88,11 @@ public class Brand extends Page {
         btR = (Button)findViewById(R.id.btR);
         final Button btBack = (Button)findViewById(R.id.btBack);
         final Button btHome = (Button)findViewById(R.id.btHome);
+
+        ViewCompat.setElevation(imageView1, 12);
+        ViewCompat.setElevation(imageView2, 12);
+        ViewCompat.setElevation(imageView3, 12);
+        ViewCompat.setElevation(imageView4, 12);
 
         if(BrandType.equals("1")){
             title.setText(R.string.t1);
@@ -172,6 +171,9 @@ public class Brand extends Page {
                         txt1.setText(Name.get(a));
                         txt2.setText(Name.get(b));
                         txt3.setText(Name.get(c));
+                        setLOGO(imageView1, logo.get(a));
+                        setLOGO(imageView2, logo.get(b));
+                        setLOGO(imageView3, logo.get(c));
 
                         imageView4.setBackgroundResource(R.mipmap.empty);
                         imageView4.setVisibility(View.GONE);
@@ -180,6 +182,8 @@ public class Brand extends Page {
                     }else if(num == 2){
                         txt1.setText(Name.get(a));
                         txt2.setText(Name.get(b));
+                        setLOGO(imageView1, logo.get(a));
+                        setLOGO(imageView2, logo.get(b));
 
                         imageView3.setBackgroundResource(R.mipmap.empty);
                         imageView4.setBackgroundResource(R.mipmap.empty);
@@ -190,6 +194,7 @@ public class Brand extends Page {
                         btR.setVisibility(View.GONE);
                     }else if(num == 3){
                         txt1.setText(Name.get(a));
+                        setLOGO(imageView1, logo.get(a));
 
                         imageView2.setBackgroundResource(R.mipmap.empty);
                         imageView3.setBackgroundResource(R.mipmap.empty);
@@ -212,18 +217,10 @@ public class Brand extends Page {
                     txt3.setVisibility(View.VISIBLE);
                     txt4.setVisibility(View.VISIBLE);
 
-                    bitmap1 = getHttpBitmap(logo.get(a));
-                    bitmap2 = getHttpBitmap(logo.get(b));
-                    bitmap3 = getHttpBitmap(logo.get(c));
-                    bitmap4 = getHttpBitmap(logo.get(d));
-                    imageView1.setImageBitmap(bitmap1);
-                    imageView2.setImageBitmap(bitmap2);
-                    imageView3.setImageBitmap(bitmap3);
-                    imageView4.setImageBitmap(bitmap4);
-                    imageView1.setVisibility(View.VISIBLE);
-                    imageView2.setVisibility(View.VISIBLE);
-                    imageView3.setVisibility(View.VISIBLE);
-                    imageView4.setVisibility(View.VISIBLE);
+                    setLOGO(imageView1, logo.get(a));
+                    setLOGO(imageView2, logo.get(b));
+                    setLOGO(imageView3, logo.get(c));
+                    setLOGO(imageView4, logo.get(d));
                     btR.setVisibility(View.GONE);
                 }else{
                     txt1.setText(Name.get(a));
@@ -235,18 +232,10 @@ public class Brand extends Page {
                     txt3.setVisibility(View.VISIBLE);
                     txt4.setVisibility(View.VISIBLE);
 
-                    bitmap1 = getHttpBitmap(logo.get(a));
-                    bitmap2 = getHttpBitmap(logo.get(b));
-                    bitmap3 = getHttpBitmap(logo.get(c));
-                    bitmap4 = getHttpBitmap(logo.get(d));
-                    imageView1.setImageBitmap(bitmap1);
-                    imageView2.setImageBitmap(bitmap2);
-                    imageView3.setImageBitmap(bitmap3);
-                    imageView4.setImageBitmap(bitmap4);
-                    imageView1.setVisibility(View.VISIBLE);
-                    imageView2.setVisibility(View.VISIBLE);
-                    imageView3.setVisibility(View.VISIBLE);
-                    imageView4.setVisibility(View.VISIBLE);
+                    setLOGO(imageView1, logo.get(a));
+                    setLOGO(imageView2, logo.get(b));
+                    setLOGO(imageView3, logo.get(c));
+                    setLOGO(imageView4, logo.get(d));
                     btR.setVisibility(View.VISIBLE);}
             }
         });
@@ -267,6 +256,9 @@ public class Brand extends Page {
                         txt1.setText(Name.get(a));
                         txt2.setText(Name.get(b));
                         txt3.setText(Name.get(c));
+                        setLOGO(imageView1, logo.get(a));
+                        setLOGO(imageView2, logo.get(b));
+                        setLOGO(imageView3, logo.get(c));
 
                         imageView4.setBackgroundResource(R.mipmap.empty);
                         imageView4.setVisibility(View.GONE);
@@ -275,6 +267,8 @@ public class Brand extends Page {
                     }else if(num == 2){
                         txt1.setText(Name.get(a));
                         txt2.setText(Name.get(b));
+                        setLOGO(imageView1, logo.get(a));
+                        setLOGO(imageView2, logo.get(b));
 
                         imageView3.setBackgroundResource(R.mipmap.empty);
                         imageView4.setBackgroundResource(R.mipmap.empty);
@@ -285,6 +279,7 @@ public class Brand extends Page {
                         btR.setVisibility(View.GONE);
                     }else if(num == 3){
                         txt1.setText(Name.get(a));
+                        setLOGO(imageView1, logo.get(a));
 
                         imageView2.setBackgroundResource(R.mipmap.empty);
                         imageView3.setBackgroundResource(R.mipmap.empty);
@@ -307,18 +302,10 @@ public class Brand extends Page {
                     txt3.setVisibility(View.VISIBLE);
                     txt4.setVisibility(View.VISIBLE);
 
-                    bitmap1 = getHttpBitmap(logo.get(a));
-                    bitmap2 = getHttpBitmap(logo.get(b));
-                    bitmap3 = getHttpBitmap(logo.get(c));
-                    bitmap4 = getHttpBitmap(logo.get(d));
-                    imageView1.setImageBitmap(bitmap1);
-                    imageView2.setImageBitmap(bitmap2);
-                    imageView3.setImageBitmap(bitmap3);
-                    imageView4.setImageBitmap(bitmap4);
-                    imageView1.setVisibility(View.VISIBLE);
-                    imageView2.setVisibility(View.VISIBLE);
-                    imageView3.setVisibility(View.VISIBLE);
-                    imageView4.setVisibility(View.VISIBLE);
+                    setLOGO(imageView1, logo.get(a));
+                    setLOGO(imageView2, logo.get(b));
+                    setLOGO(imageView3, logo.get(c));
+                    setLOGO(imageView4, logo.get(d));
                     btR.setVisibility(View.GONE);
                 }else{
                     txt1.setText(Name.get(a));
@@ -330,18 +317,10 @@ public class Brand extends Page {
                     txt3.setVisibility(View.VISIBLE);
                     txt4.setVisibility(View.VISIBLE);
 
-                    bitmap1 = getHttpBitmap(logo.get(a));
-                    bitmap2 = getHttpBitmap(logo.get(b));
-                    bitmap3 = getHttpBitmap(logo.get(c));
-                    bitmap4 = getHttpBitmap(logo.get(d));
-                    imageView1.setImageBitmap(bitmap1);
-                    imageView2.setImageBitmap(bitmap2);
-                    imageView3.setImageBitmap(bitmap3);
-                    imageView4.setImageBitmap(bitmap4);
-                    imageView1.setVisibility(View.VISIBLE);
-                    imageView2.setVisibility(View.VISIBLE);
-                    imageView3.setVisibility(View.VISIBLE);
-                    imageView4.setVisibility(View.VISIBLE);
+                    setLOGO(imageView1, logo.get(a));
+                    setLOGO(imageView2, logo.get(b));
+                    setLOGO(imageView3, logo.get(c));
+                    setLOGO(imageView4, logo.get(d));
                     btR.setVisibility(View.VISIBLE);}
             }
         });
@@ -385,6 +364,7 @@ public class Brand extends Page {
                         JSONObject jsonObject1 = new JSONObject(response.toString());
                         JSONArray jsonArray = jsonObject1.getJSONArray(BrandType);
                         total = jsonArray.length();
+
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject jsonObject = (JSONObject) jsonArray.get(i);
                             //取出name
@@ -421,20 +401,16 @@ public class Brand extends Page {
                             big.add(BrandPicBIG);
 
 
-                            if (i==4){
+                            if (i==3){
                                 Log.e("Start", "Start");
                                 setText(txt1, Name.get(0));
                                 setText(txt2, Name.get(1));
                                 setText(txt3, Name.get(2));
                                 setText(txt4, Name.get(3));
-                                bitmap1 = getHttpBitmap(logo.get(0));
-                                bitmap2 = getHttpBitmap(logo.get(1));
-                                bitmap3 = getHttpBitmap(logo.get(2));
-                                bitmap4 = getHttpBitmap(logo.get(3));
-                                setLogo(imageView1, bitmap1);
-                                setLogo(imageView2, bitmap2);
-                                setLogo(imageView3, bitmap3);
-                                setLogo(imageView4, bitmap4);
+                                setLOGO(imageView1, logo.get(0));
+                                setLOGO(imageView2, logo.get(1));
+                                setLOGO(imageView3, logo.get(2));
+                                setLOGO(imageView4, logo.get(3));
                                 setVis(image1);
                                 setVis(image2);
                                 setVis(image3);
@@ -442,39 +418,14 @@ public class Brand extends Page {
                                 Log.e("Finish", "Finish");
                             }
                         }
+                    if (jsonArray.length()==4){
+                        btR.setVisibility(View.GONE);
+                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                 } finally {
                     if (conn != null) conn.disconnect();               //make sure you disconnnect
                 }
-            }
-
-            private void setLogo(final ImageView imageView, final Bitmap bitmap){
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        imageView.setImageBitmap(bitmap);
-                        imageView.setVisibility(View.VISIBLE);
-                    }
-                });
-            }
-
-            private void setText(final TextView text,final String value){
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        text.setText(value);
-                    }
-                });
-            }
-
-            private void setVis(final GifImageView image){
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        image.setVisibility(View.GONE);
-                    }
-                });
             }
         }).start();
 
@@ -508,29 +459,40 @@ public class Brand extends Page {
         super.onDestroy();
     }
 
-    public static Bitmap getHttpBitmap(String url){
-        URL myFileURL;
-        Bitmap bitmap=null;
-        try{
-            myFileURL = new URL(url);
-        //獲得連線
-            HttpURLConnection conn=(HttpURLConnection)myFileURL.openConnection();
-        //設定超時時間為6000毫秒，conn.setConnectionTiem(0);表示沒有時間限制
-            conn.setConnectTimeout(0);
-        //連線設定獲得資料流
-            conn.setDoInput(true);
-        //不使用快取
-            conn.setUseCaches(false);
-        //這句可有可無，沒有影響
-        //conn.connect();
-        //得到資料流
-            InputStream is = conn.getInputStream();
-        //解析得到圖片
-            bitmap = BitmapFactory.decodeStream(is);
-        //關閉資料流
-            is.close();
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-        return bitmap;
-    }}
+    private void setLOGO(final ImageView imageView, final String value){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Glide.with(Brand.this)
+                        .asBitmap()
+                        .load(value)
+                        .into(new SimpleTarget<Bitmap>() {
+                            @Override
+                            public void onResourceReady(Bitmap resource, Transition<? super Bitmap> transition) {
+                                imageView.setImageBitmap(resource);
+                            }
+                        });
+
+                imageView.setVisibility(View.VISIBLE);
+            }
+        });
+    }
+
+    private void setText(final TextView text,final String value){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                text.setText(value);
+            }
+        });
+    }
+
+    private void setVis(final GifImageView image){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                image.setVisibility(View.GONE);
+            }
+        });
+    }
+}

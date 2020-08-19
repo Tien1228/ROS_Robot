@@ -15,7 +15,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Temi_API_23" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Temi_API_23_2" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -38,8 +38,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Temi_API_23" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-08-18T18:44:26.817Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Temi_API_23_2" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-08-19T19:49:18.932Z" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -119,22 +119,30 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="724" height="174" key="GridCell.Tab.0.bottom" timestamp="1597837711674">
+    <state x="722" y="91" key="#Inspections" timestamp="1597864593583">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="724" height="174" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1597837711674" />
-    <state width="724" height="174" key="GridCell.Tab.0.center" timestamp="1597837711674">
+    <state x="722" y="91" key="#Inspections/0.0.1536.864@0.0.1536.864" timestamp="1597864593583" />
+    <state width="1493" height="168" key="GridCell.Tab.0.bottom" timestamp="1597860716374">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="724" height="174" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1597837711674" />
-    <state width="724" height="174" key="GridCell.Tab.0.left" timestamp="1597837711673">
+    <state width="1493" height="168" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1597860716374" />
+    <state width="1493" height="168" key="GridCell.Tab.0.center" timestamp="1597860716373">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="724" height="174" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1597837711673" />
-    <state width="724" height="174" key="GridCell.Tab.0.right" timestamp="1597837711674">
+    <state width="1493" height="168" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1597860716373" />
+    <state width="1493" height="168" key="GridCell.Tab.0.left" timestamp="1597860716373">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="724" height="174" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1597837711674" />
+    <state width="1493" height="168" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1597860716373" />
+    <state width="1493" height="168" key="GridCell.Tab.0.right" timestamp="1597860716373">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="168" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1597860716373" />
+    <state x="93" y="93" width="1350" height="678" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1597866532935">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="93" y="93" width="1350" height="678" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1536.864@0.0.1536.864" timestamp="1597866532935" />
     <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1597783987116">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
