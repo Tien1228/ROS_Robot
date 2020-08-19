@@ -95,8 +95,9 @@
         android:layout_x="527dp"
         android:layout_y="624dp"
         android:background="@android:color/transparent"
+        android:clickable="true"
         android:drawableLeft="@drawable/arrow_l_foreground"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/homebtn" />
 
     <TextView

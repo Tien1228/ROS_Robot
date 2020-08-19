@@ -63,6 +63,8 @@ public class Brand extends Page {
     private GifImageView image2;
     private GifImageView image3;
     private GifImageView image4;
+    private Button btL;
+    private Button btR;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,8 +90,8 @@ public class Brand extends Page {
         imageView2 = (ImageView)findViewById(R.id.imageView2);
         imageView3 = (ImageView)findViewById(R.id.imageView3);
         imageView4 = (ImageView)findViewById(R.id.imageView4);
-        final Button btL = (Button)findViewById(R.id.btL);
-        final Button btR = (Button)findViewById(R.id.btR);
+        btL = (Button)findViewById(R.id.btL);
+        btR = (Button)findViewById(R.id.btR);
         final Button btBack = (Button)findViewById(R.id.btBack);
         final Button btHome = (Button)findViewById(R.id.btHome);
 
@@ -159,62 +161,93 @@ public class Brand extends Page {
                 a-=4; b-=4; c-=4; d-=4;
 
                 if(a==0){
-                    btL.setVisibility(v.GONE);
-                }else if(a!=0){
-                    btL.setVisibility(v.VISIBLE);}
+                    btL.setVisibility(View.GONE);
+                }else{
+                    btL.setVisibility(View.VISIBLE);
+                }
 
-                if(d>total){
+                if(d>total-1){
                     int num = d+1 - total;
                     if(num == 1){
                         txt1.setText(Name.get(a));
                         txt2.setText(Name.get(b));
                         txt3.setText(Name.get(c));
 
-                        image4.setBackgroundResource(R.mipmap.empty);
-                        image4.setVisibility(v.GONE);
-                        txt4.setVisibility(v.GONE);
-                        btR.setVisibility(v.GONE);
+                        imageView4.setBackgroundResource(R.mipmap.empty);
+                        imageView4.setVisibility(View.GONE);
+                        txt4.setVisibility(View.GONE);
+                        btR.setVisibility(View.GONE);
                     }else if(num == 2){
                         txt1.setText(Name.get(a));
                         txt2.setText(Name.get(b));
 
-                        image3.setBackgroundResource(R.mipmap.empty);
-                        image4.setBackgroundResource(R.mipmap.empty);
-                        image3.setVisibility(v.GONE);
-                        image4.setVisibility(v.GONE);
-                        txt3.setVisibility(v.GONE);
-                        txt4.setVisibility(v.GONE);
-                        btR.setVisibility(v.GONE);
+                        imageView3.setBackgroundResource(R.mipmap.empty);
+                        imageView4.setBackgroundResource(R.mipmap.empty);
+                        imageView3.setVisibility(View.GONE);
+                        imageView4.setVisibility(View.GONE);
+                        txt3.setVisibility(View.GONE);
+                        txt4.setVisibility(View.GONE);
+                        btR.setVisibility(View.GONE);
                     }else if(num == 3){
                         txt1.setText(Name.get(a));
 
-                        image2.setBackgroundResource(R.mipmap.empty);
-                        image3.setBackgroundResource(R.mipmap.empty);
-                        image4.setBackgroundResource(R.mipmap.empty);
-                        image2.setVisibility(v.GONE);
-                        image3.setVisibility(v.GONE);
-                        image4.setVisibility(v.GONE);
-                        txt2.setVisibility(v.GONE);
-                        txt3.setVisibility(v.GONE);
-                        txt4.setVisibility(v.GONE);
-                        btR.setVisibility(v.GONE);
+                        imageView2.setBackgroundResource(R.mipmap.empty);
+                        imageView3.setBackgroundResource(R.mipmap.empty);
+                        imageView4.setBackgroundResource(R.mipmap.empty);
+                        imageView2.setVisibility(View.GONE);
+                        imageView3.setVisibility(View.GONE);
+                        imageView4.setVisibility(View.GONE);
+                        txt2.setVisibility(View.GONE);
+                        txt3.setVisibility(View.GONE);
+                        txt4.setVisibility(View.GONE);
+                        btR.setVisibility(View.GONE);
                     }
-                }else if(d == total){
-                    btR.setVisibility(v.GONE);
+                }else if(d == total-1){
+                    txt1.setText(Name.get(a));
+                    txt2.setText(Name.get(b));
+                    txt3.setText(Name.get(c));
+                    txt4.setText(Name.get(d));
+                    txt1.setVisibility(View.VISIBLE);
+                    txt2.setVisibility(View.VISIBLE);
+                    txt3.setVisibility(View.VISIBLE);
+                    txt4.setVisibility(View.VISIBLE);
+
+                    bitmap1 = getHttpBitmap(logo.get(a));
+                    bitmap2 = getHttpBitmap(logo.get(b));
+                    bitmap3 = getHttpBitmap(logo.get(c));
+                    bitmap4 = getHttpBitmap(logo.get(d));
+                    imageView1.setImageBitmap(bitmap1);
+                    imageView2.setImageBitmap(bitmap2);
+                    imageView3.setImageBitmap(bitmap3);
+                    imageView4.setImageBitmap(bitmap4);
+                    imageView1.setVisibility(View.VISIBLE);
+                    imageView2.setVisibility(View.VISIBLE);
+                    imageView3.setVisibility(View.VISIBLE);
+                    imageView4.setVisibility(View.VISIBLE);
+                    btR.setVisibility(View.GONE);
                 }else{
                     txt1.setText(Name.get(a));
                     txt2.setText(Name.get(b));
                     txt3.setText(Name.get(c));
                     txt4.setText(Name.get(d));
-                    txt1.setVisibility(v.VISIBLE);
-                    txt2.setVisibility(v.VISIBLE);
-                    txt3.setVisibility(v.VISIBLE);
-                    txt4.setVisibility(v.VISIBLE);
-                    image1.setVisibility(v.VISIBLE);
-                    image2.setVisibility(v.VISIBLE);
-                    image3.setVisibility(v.VISIBLE);
-                    image4.setVisibility(v.VISIBLE);
-                    btR.setVisibility(v.VISIBLE);}
+                    txt1.setVisibility(View.VISIBLE);
+                    txt2.setVisibility(View.VISIBLE);
+                    txt3.setVisibility(View.VISIBLE);
+                    txt4.setVisibility(View.VISIBLE);
+
+                    bitmap1 = getHttpBitmap(logo.get(a));
+                    bitmap2 = getHttpBitmap(logo.get(b));
+                    bitmap3 = getHttpBitmap(logo.get(c));
+                    bitmap4 = getHttpBitmap(logo.get(d));
+                    imageView1.setImageBitmap(bitmap1);
+                    imageView2.setImageBitmap(bitmap2);
+                    imageView3.setImageBitmap(bitmap3);
+                    imageView4.setImageBitmap(bitmap4);
+                    imageView1.setVisibility(View.VISIBLE);
+                    imageView2.setVisibility(View.VISIBLE);
+                    imageView3.setVisibility(View.VISIBLE);
+                    imageView4.setVisibility(View.VISIBLE);
+                    btR.setVisibility(View.VISIBLE);}
             }
         });
 
@@ -223,62 +256,93 @@ public class Brand extends Page {
                 a+=4; b+=4; c+=4; d+=4;
 
                 if(a==0){
-                    btL.setVisibility(v.GONE);
-                }else if(a!=0){
-                    btL.setVisibility(v.VISIBLE);}
+                    btL.setVisibility(View.GONE);
+                }else{
+                    btL.setVisibility(View.VISIBLE);
+                }
 
-                if(d>total){
+                if(d>total-1){
                     int num = d+1 - total;
                     if(num == 1){
                         txt1.setText(Name.get(a));
                         txt2.setText(Name.get(b));
                         txt3.setText(Name.get(c));
 
-                        image4.setBackgroundResource(R.mipmap.empty);
-                        image4.setVisibility(v.GONE);
-                        txt4.setVisibility(v.GONE);
-                        btR.setVisibility(v.GONE);
+                        imageView4.setBackgroundResource(R.mipmap.empty);
+                        imageView4.setVisibility(View.GONE);
+                        txt4.setVisibility(View.GONE);
+                        btR.setVisibility(View.GONE);
                     }else if(num == 2){
                         txt1.setText(Name.get(a));
                         txt2.setText(Name.get(b));
 
-                        image3.setBackgroundResource(R.mipmap.empty);
-                        image4.setBackgroundResource(R.mipmap.empty);
-                        image3.setVisibility(v.GONE);
-                        image4.setVisibility(v.GONE);
-                        txt3.setVisibility(v.GONE);
-                        txt4.setVisibility(v.GONE);
-                        btR.setVisibility(v.GONE);
+                        imageView3.setBackgroundResource(R.mipmap.empty);
+                        imageView4.setBackgroundResource(R.mipmap.empty);
+                        imageView3.setVisibility(View.GONE);
+                        imageView4.setVisibility(View.GONE);
+                        txt3.setVisibility(View.GONE);
+                        txt4.setVisibility(View.GONE);
+                        btR.setVisibility(View.GONE);
                     }else if(num == 3){
                         txt1.setText(Name.get(a));
 
-                        image2.setBackgroundResource(R.mipmap.empty);
-                        image3.setBackgroundResource(R.mipmap.empty);
-                        image4.setBackgroundResource(R.mipmap.empty);
-                        image2.setVisibility(v.GONE);
-                        image3.setVisibility(v.GONE);
-                        image4.setVisibility(v.GONE);
-                        txt2.setVisibility(v.GONE);
-                        txt3.setVisibility(v.GONE);
-                        txt4.setVisibility(v.GONE);
-                        btR.setVisibility(v.GONE);
+                        imageView2.setBackgroundResource(R.mipmap.empty);
+                        imageView3.setBackgroundResource(R.mipmap.empty);
+                        imageView4.setBackgroundResource(R.mipmap.empty);
+                        imageView2.setVisibility(View.GONE);
+                        imageView3.setVisibility(View.GONE);
+                        imageView4.setVisibility(View.GONE);
+                        txt2.setVisibility(View.GONE);
+                        txt3.setVisibility(View.GONE);
+                        txt4.setVisibility(View.GONE);
+                        btR.setVisibility(View.GONE);
                     }
-                }else if(d == total){
-                    btR.setVisibility(v.GONE);
+                }else if(d == total-1){
+                    txt1.setText(Name.get(a));
+                    txt2.setText(Name.get(b));
+                    txt3.setText(Name.get(c));
+                    txt4.setText(Name.get(d));
+                    txt1.setVisibility(View.VISIBLE);
+                    txt2.setVisibility(View.VISIBLE);
+                    txt3.setVisibility(View.VISIBLE);
+                    txt4.setVisibility(View.VISIBLE);
+
+                    bitmap1 = getHttpBitmap(logo.get(a));
+                    bitmap2 = getHttpBitmap(logo.get(b));
+                    bitmap3 = getHttpBitmap(logo.get(c));
+                    bitmap4 = getHttpBitmap(logo.get(d));
+                    imageView1.setImageBitmap(bitmap1);
+                    imageView2.setImageBitmap(bitmap2);
+                    imageView3.setImageBitmap(bitmap3);
+                    imageView4.setImageBitmap(bitmap4);
+                    imageView1.setVisibility(View.VISIBLE);
+                    imageView2.setVisibility(View.VISIBLE);
+                    imageView3.setVisibility(View.VISIBLE);
+                    imageView4.setVisibility(View.VISIBLE);
+                    btR.setVisibility(View.GONE);
                 }else{
                     txt1.setText(Name.get(a));
                     txt2.setText(Name.get(b));
                     txt3.setText(Name.get(c));
                     txt4.setText(Name.get(d));
-                    txt1.setVisibility(v.VISIBLE);
-                    txt2.setVisibility(v.VISIBLE);
-                    txt3.setVisibility(v.VISIBLE);
-                    txt4.setVisibility(v.VISIBLE);
-                    image1.setVisibility(v.VISIBLE);
-                    image2.setVisibility(v.VISIBLE);
-                    image3.setVisibility(v.VISIBLE);
-                    image4.setVisibility(v.VISIBLE);
-                    btR.setVisibility(v.VISIBLE);}
+                    txt1.setVisibility(View.VISIBLE);
+                    txt2.setVisibility(View.VISIBLE);
+                    txt3.setVisibility(View.VISIBLE);
+                    txt4.setVisibility(View.VISIBLE);
+
+                    bitmap1 = getHttpBitmap(logo.get(a));
+                    bitmap2 = getHttpBitmap(logo.get(b));
+                    bitmap3 = getHttpBitmap(logo.get(c));
+                    bitmap4 = getHttpBitmap(logo.get(d));
+                    imageView1.setImageBitmap(bitmap1);
+                    imageView2.setImageBitmap(bitmap2);
+                    imageView3.setImageBitmap(bitmap3);
+                    imageView4.setImageBitmap(bitmap4);
+                    imageView1.setVisibility(View.VISIBLE);
+                    imageView2.setVisibility(View.VISIBLE);
+                    imageView3.setVisibility(View.VISIBLE);
+                    imageView4.setVisibility(View.VISIBLE);
+                    btR.setVisibility(View.VISIBLE);}
             }
         });
 
@@ -320,6 +384,7 @@ public class Brand extends Page {
 
                         JSONObject jsonObject1 = new JSONObject(response.toString());
                         JSONArray jsonArray = jsonObject1.getJSONArray(BrandType);
+                        total = jsonArray.length();
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject jsonObject = (JSONObject) jsonArray.get(i);
                             //取出name
