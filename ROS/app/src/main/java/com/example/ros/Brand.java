@@ -3,6 +3,7 @@ package com.example.ros;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -17,7 +18,6 @@ import androidx.core.view.ViewCompat;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
-import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -34,6 +34,8 @@ import pl.droidsonroids.gif.GifImageView;
 public class Brand extends Page {
 
     private int total;
+    private int allnum;
+    private int thisnum;
     private int a = 0;
     private int b = 1;
     private int c = 2;
@@ -52,6 +54,8 @@ public class Brand extends Page {
     private TextView txt2;
     private TextView txt3;
     private TextView txt4;
+    private TextView txtAll;
+    private TextView txtThis;
     private ImageView imageView1;
     private ImageView imageView2;
     private ImageView imageView3;
@@ -62,6 +66,7 @@ public class Brand extends Page {
     private GifImageView image4;
     private Button btL;
     private Button btR;
+    private TextView title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,11 +83,13 @@ public class Brand extends Page {
         image2 = (GifImageView) findViewById(R.id.image2);
         image3 = (GifImageView) findViewById(R.id.image3);
         image4 = (GifImageView) findViewById(R.id.image4);
-        final TextView title = (TextView)findViewById(R.id.main);
+        title = (TextView)findViewById(R.id.main);
         txt1 = (TextView)findViewById(R.id.txt1);
         txt2 = (TextView)findViewById(R.id.txt2);
         txt3 = (TextView)findViewById(R.id.txt3);
         txt4 = (TextView)findViewById(R.id.txt4);
+        txtAll = (TextView)findViewById(R.id.txtAll);
+        txtThis = (TextView)findViewById(R.id.txtThis);
         imageView1 = (ImageView)findViewById(R.id.imageView1);
         imageView2 = (ImageView)findViewById(R.id.imageView2);
         imageView3 = (ImageView)findViewById(R.id.imageView3);
@@ -92,10 +99,18 @@ public class Brand extends Page {
         final Button btBack = (Button)findViewById(R.id.btBack);
         final Button btHome = (Button)findViewById(R.id.btHome);
 
-        ViewCompat.setElevation(imageView1, 12);
-        ViewCompat.setElevation(imageView2, 12);
-        ViewCompat.setElevation(imageView3, 12);
-        ViewCompat.setElevation(imageView4, 12);
+        btL.setClickable(false);
+        btL.setAlpha((float) 0.3);
+
+        thisnum = 1;
+        txtThis.setText(numToStr(thisnum));
+
+
+        //set View shadow
+        ViewCompat.setElevation(imageView1, 16);
+        ViewCompat.setElevation(imageView2, 16);
+        ViewCompat.setElevation(imageView3, 16);
+        ViewCompat.setElevation(imageView4, 16);
 
         if(BrandType.equals("1")){
             title.setText(R.string.t1);
@@ -115,58 +130,46 @@ public class Brand extends Page {
             title.setText(R.string.t8);
         }
 
-
-        txt1.setText("Loading....");
-        txt2.setText("Loading....");
-        txt3.setText("Loading....");
-        txt4.setText("Loading....");
+        txt1.setText("Loading...."); txt2.setText("Loading...."); txt3.setText("Loading...."); txt4.setText("Loading....");
 
         try {
             // 如果載入的是gif動圖，第一步需要先將gif動圖資源轉化為GifDrawable
             // 將gif圖資源轉化為GifDrawable
-            GifDrawable gifDrawable = new GifDrawable(getResources(), R.drawable.loading);
+            GifDrawable gifDrawable1 = new GifDrawable(getResources(), R.drawable.loading);
+            GifDrawable gifDrawable2 = new GifDrawable(getResources(), R.drawable.loading);
+            GifDrawable gifDrawable3 = new GifDrawable(getResources(), R.drawable.loading);
+            GifDrawable gifDrawable4 = new GifDrawable(getResources(), R.drawable.loading);
             // gif1載入一個動態圖gif
-            image1.setImageDrawable(gifDrawable);
-            image2.setImageDrawable(gifDrawable);
-            image3.setImageDrawable(gifDrawable);
-            image4.setImageDrawable(gifDrawable);
+            image1.setImageDrawable(gifDrawable1);
+            image2.setImageDrawable(gifDrawable2);
+            image3.setImageDrawable(gifDrawable3);
+            image4.setImageDrawable(gifDrawable4);
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        image1.setOnClickListener(new OnClickListener(){
-            public void onClick(View v){
-
-            }
-        });
-
-        image2.setOnClickListener(new OnClickListener(){
-            public void onClick(View v){
-
-            }
-        });
-
-        image3.setOnClickListener(new OnClickListener(){
-            public void onClick(View v){
-
-            }
-        });
-
-        image4.setOnClickListener(new OnClickListener(){
-            public void onClick(View v){
-
-            }
-        });
-
         btL.setOnClickListener(new OnClickListener(){
             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             public void onClick(View v){
+                setAnimation();
+
+                if (thisnum==1){
+                    txtThis.setText(numToStr(thisnum));
+                }else {
+                    thisnum--;
+                    txtThis.setText(numToStr(thisnum));
+                }
+
                 a-=4; b-=4; c-=4; d-=4;
 
-                if(a==0){
-                    btL.setVisibility(View.GONE);
+                if(a==-4){
+                    a+=4; b+=4; c+=4; d+=4;
+                }else if(a==0){
+                    btL.setClickable(false);
+                    btL.setAlpha((float) 0.3);
                 }else{
-                    btL.setVisibility(View.VISIBLE);
+                    btL.setClickable(true);
+                    btL.setAlpha((float) 1);
                 }
 
                 if(d>total-1){
@@ -175,6 +178,9 @@ public class Brand extends Page {
                         txt1.setText(Name.get(a));
                         txt2.setText(Name.get(b));
                         txt3.setText(Name.get(c));
+                        txt1.setVisibility(View.VISIBLE);
+                        txt2.setVisibility(View.VISIBLE);
+                        txt3.setVisibility(View.VISIBLE);
                         setLOGO(imageView1, logo.get(a));
                         setLOGO(imageView2, logo.get(b));
                         setLOGO(imageView3, logo.get(c));
@@ -182,11 +188,14 @@ public class Brand extends Page {
                         imageView4.setBackgroundResource(R.mipmap.empty);
                         imageView4.setVisibility(View.GONE);
                         txt4.setVisibility(View.GONE);
-                        btR.setVisibility(View.GONE);
+                        btR.setClickable(false);
+                        btR.setAlpha((float) 0.3);
                         setVis(image4);
                     }else if(num == 2){
                         txt1.setText(Name.get(a));
                         txt2.setText(Name.get(b));
+                        txt1.setVisibility(View.VISIBLE);
+                        txt2.setVisibility(View.VISIBLE);
                         setLOGO(imageView1, logo.get(a));
                         setLOGO(imageView2, logo.get(b));
 
@@ -196,11 +205,13 @@ public class Brand extends Page {
                         imageView4.setVisibility(View.GONE);
                         txt3.setVisibility(View.GONE);
                         txt4.setVisibility(View.GONE);
-                        btR.setVisibility(View.GONE);
+                        btR.setClickable(false);
+                        btR.setAlpha((float) 0.3);
                         setVis(image3);
                         setVis(image4);
                     }else if(num == 3){
                         txt1.setText(Name.get(a));
+                        txt1.setVisibility(View.VISIBLE);
                         setLOGO(imageView1, logo.get(a));
 
                         imageView2.setBackgroundResource(R.mipmap.empty);
@@ -212,7 +223,8 @@ public class Brand extends Page {
                         txt2.setVisibility(View.GONE);
                         txt3.setVisibility(View.GONE);
                         txt4.setVisibility(View.GONE);
-                        btR.setVisibility(View.GONE);
+                        btR.setClickable(false);
+                        btR.setAlpha((float) 0.3);
                         setVis(image2);
                         setVis(image3);
                         setVis(image4);
@@ -235,7 +247,8 @@ public class Brand extends Page {
                     imageView2.setBackgroundResource(R.drawable.bd_circle_shape);
                     imageView3.setBackgroundResource(R.drawable.bd_circle_shape);
                     imageView4.setBackgroundResource(R.drawable.bd_circle_shape);
-                    btR.setVisibility(View.GONE);
+                    btR.setClickable(false);
+                    btR.setAlpha((float) 0.3);
 
                     image1.setVisibility(View.VISIBLE);
                     image2.setVisibility(View.VISIBLE);
@@ -259,7 +272,8 @@ public class Brand extends Page {
                     imageView2.setBackgroundResource(R.drawable.bd_circle_shape);
                     imageView3.setBackgroundResource(R.drawable.bd_circle_shape);
                     imageView4.setBackgroundResource(R.drawable.bd_circle_shape);
-                    btR.setVisibility(View.VISIBLE);
+                    btR.setClickable(true);
+                    btR.setAlpha((float) 1);
 
                     image1.setVisibility(View.VISIBLE);
                     image2.setVisibility(View.VISIBLE);
@@ -271,20 +285,36 @@ public class Brand extends Page {
 
         btR.setOnClickListener(new OnClickListener(){
             public void onClick(View v){
+                setAnimation();
+
+                if (thisnum==allnum){
+                    txtThis.setText(numToStr(thisnum));
+                }else {
+                    thisnum++;
+                    txtThis.setText(numToStr(thisnum));
+                }
+
                 a+=4; b+=4; c+=4; d+=4;
 
                 if(a==0){
-                    btL.setVisibility(View.GONE);
+                    btL.setClickable(false);
+                    btL.setAlpha((float) 0.3);
                 }else{
-                    btL.setVisibility(View.VISIBLE);
+                    btL.setClickable(true);
+                    btL.setAlpha((float) 1);
                 }
 
-                if(d>total-1){
+                if (Name.size()==4){
+                    a-=4; b-=4; c-=4; d-=4;
+                }else if(d>total-1){
                     int num = d+1 - total;
                     if(num == 1){
                         txt1.setText(Name.get(a));
                         txt2.setText(Name.get(b));
                         txt3.setText(Name.get(c));
+                        txt1.setVisibility(View.VISIBLE);
+                        txt2.setVisibility(View.VISIBLE);
+                        txt3.setVisibility(View.VISIBLE);
                         setLOGO(imageView1, logo.get(a));
                         setLOGO(imageView2, logo.get(b));
                         setLOGO(imageView3, logo.get(c));
@@ -292,11 +322,14 @@ public class Brand extends Page {
                         imageView4.setBackgroundResource(R.mipmap.empty);
                         imageView4.setVisibility(View.GONE);
                         txt4.setVisibility(View.GONE);
-                        btR.setVisibility(View.GONE);
+                        btR.setClickable(false);
+                        btR.setAlpha((float) 0.3);
                         setVis(image4);
                     }else if(num == 2){
                         txt1.setText(Name.get(a));
                         txt2.setText(Name.get(b));
+                        txt1.setVisibility(View.VISIBLE);
+                        txt2.setVisibility(View.VISIBLE);
                         setLOGO(imageView1, logo.get(a));
                         setLOGO(imageView2, logo.get(b));
 
@@ -306,11 +339,13 @@ public class Brand extends Page {
                         imageView4.setVisibility(View.GONE);
                         txt3.setVisibility(View.GONE);
                         txt4.setVisibility(View.GONE);
-                        btR.setVisibility(View.GONE);
+                        btR.setClickable(false);
+                        btR.setAlpha((float) 0.3);
                         setVis(image3);
                         setVis(image4);
                     }else if(num == 3){
                         txt1.setText(Name.get(a));
+                        txt1.setVisibility(View.VISIBLE);
                         setLOGO(imageView1, logo.get(a));
 
                         imageView2.setBackgroundResource(R.mipmap.empty);
@@ -322,7 +357,8 @@ public class Brand extends Page {
                         txt2.setVisibility(View.GONE);
                         txt3.setVisibility(View.GONE);
                         txt4.setVisibility(View.GONE);
-                        btR.setVisibility(View.GONE);
+                        btR.setClickable(false);
+                        btR.setAlpha((float) 0.3);
                         setVis(image2);
                         setVis(image3);
                         setVis(image4);
@@ -345,7 +381,8 @@ public class Brand extends Page {
                     imageView2.setBackgroundResource(R.drawable.bd_circle_shape);
                     imageView3.setBackgroundResource(R.drawable.bd_circle_shape);
                     imageView4.setBackgroundResource(R.drawable.bd_circle_shape);
-                    btR.setVisibility(View.GONE);
+                    btR.setClickable(false);
+                    btR.setAlpha((float) 0.3);
 
                     image1.setVisibility(View.VISIBLE);
                     image2.setVisibility(View.VISIBLE);
@@ -369,7 +406,8 @@ public class Brand extends Page {
                     imageView2.setBackgroundResource(R.drawable.bd_circle_shape);
                     imageView3.setBackgroundResource(R.drawable.bd_circle_shape);
                     imageView4.setBackgroundResource(R.drawable.bd_circle_shape);
-                    btR.setVisibility(View.VISIBLE);
+                    btR.setClickable(true);
+                    btR.setAlpha((float) 1);
 
                     image1.setVisibility(View.VISIBLE);
                     image2.setVisibility(View.VISIBLE);
@@ -391,7 +429,29 @@ public class Brand extends Page {
             }
         });
 
+        imageView1.setOnClickListener(new OnClickListener(){
+            public void onClick(View v){
 
+            }
+        });
+
+        imageView2.setOnClickListener(new OnClickListener(){
+            public void onClick(View v){
+
+            }
+        });
+
+        imageView3.setOnClickListener(new OnClickListener(){
+            public void onClick(View v){
+
+            }
+        });
+
+        imageView4.setOnClickListener(new OnClickListener(){
+            public void onClick(View v){
+
+            }
+        });
 
         new Thread(new Runnable() {
             @Override
@@ -418,6 +478,11 @@ public class Brand extends Page {
                         JSONObject jsonObject1 = new JSONObject(response.toString());
                         JSONArray jsonArray = jsonObject1.getJSONArray(BrandType);
                         total = jsonArray.length();
+                        if (total%4==0){
+                            allnum = total/4;
+                        }else {
+                            allnum = (total/4)+1;
+                        }
 
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject jsonObject = (JSONObject) jsonArray.get(i);
@@ -456,20 +521,24 @@ public class Brand extends Page {
 
 
                             if (i==3){
-                                Log.e("Start", "Start");
-                                setText(txt1, Name.get(0));
-                                setText(txt2, Name.get(1));
-                                setText(txt3, Name.get(2));
-                                setText(txt4, Name.get(3));
-                                setLOGO(imageView1, logo.get(0));
-                                setLOGO(imageView2, logo.get(1));
-                                setLOGO(imageView3, logo.get(2));
-                                setLOGO(imageView4, logo.get(3));
-                                Log.e("Finish", "Finish");
+                            Log.e("Start", "Start");
+                            setText(txt1, Name.get(0));
+                            setText(txt2, Name.get(1));
+                            setText(txt3, Name.get(2));
+                            setText(txt4, Name.get(3));
+                            setLOGO(imageView1, logo.get(0));
+                            setLOGO(imageView2, logo.get(1));
+                            setLOGO(imageView3, logo.get(2));
+                            setLOGO(imageView4, logo.get(3));
+                            Log.e("Finish", "Finish");
                             }
                         }
+
+                        setText(txtAll, numToStr(allnum));
+
                     if (jsonArray.length()==4){
-                        btR.setVisibility(View.GONE);
+                        btR.setClickable(false);
+                        btR.setAlpha((float) 0.3);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -543,5 +612,28 @@ public class Brand extends Page {
                 image.setVisibility(View.GONE);
             }
         });
+    }
+
+    private void  setAnimation(){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                txt1.setVisibility(View.GONE);
+                txt2.setVisibility(View.GONE);
+                txt3.setVisibility(View.GONE);
+                txt4.setVisibility(View.GONE);
+                imageView1.setVisibility(View.GONE);
+                imageView2.setVisibility(View.GONE);
+                imageView3.setVisibility(View.GONE);
+                imageView4.setVisibility(View.GONE);
+            }
+        });
+
+    }
+
+    private String numToStr(final int i){
+        String s = new String(""+i);
+
+        return s;
     }
 }

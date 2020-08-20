@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:background="#E3DBD5"
     tools:context=".MainActivity"
-    android:radius="30dp">
+    android:radius="30dp"
+    android:animateLayoutChanges="true">
 
     <TextView
         android:id="@+id/main"
@@ -78,104 +79,101 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btR"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginBottom="4dp"
-        android:layout_x="644dp"
+        android:layout_x="663dp"
         android:layout_y="624dp"
-        android:background="@android:color/transparent"
-        android:drawableLeft="@drawable/arrow_r_foreground"
+        android:background="@mipmap/arrow_rr"
         app:layout_constraintBottom_toTopOf="@+id/homebtn" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btL"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginBottom="4dp"
-        android:layout_x="527dp"
+        android:layout_x="469dp"
         android:layout_y="624dp"
-        android:background="@android:color/transparent"
-        android:clickable="true"
-        android:drawableLeft="@drawable/arrow_l_foreground"
-        android:visibility="gone"
+        android:background="@mipmap/arrow_ll"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/homebtn" />
 
     <TextView
         android:id="@+id/txt1"
-        android:layout_width="220dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:layout_x="69dp"
-        android:layout_y="500dp"
+        android:layout_y="530dp"
         android:clickable="false"
         android:textAlignment="center"
-        android:textSize="30sp"
-        android:layout_gravity="center_horizontal" />
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/txt3"
-        android:layout_width="220dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:layout_x="663dp"
-        android:layout_y="500dp"
+        android:layout_y="530dp"
         android:clickable="false"
         android:textAlignment="center"
-        android:textSize="30sp"
-        android:layout_gravity="center_horizontal" />
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/txt4"
-        android:layout_width="220dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:layout_x="957dp"
-        android:layout_y="500dp"
+        android:layout_y="530dp"
         android:clickable="false"
         android:textAlignment="center"
-        android:textSize="30sp"
-        android:layout_gravity="center_horizontal" />
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/txt2"
-        android:layout_width="220dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:layout_x="369dp"
-        android:layout_y="500dp"
+        android:layout_y="530dp"
         android:clickable="false"
         android:textAlignment="center"
-        android:textSize="30sp"
-        android:layout_gravity="center_horizontal" />
+        android:textSize="30sp" />
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/image1"
-        android:layout_height="220dp"
-        android:layout_width="220dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:layout_x="69dp"
-        android:layout_y="269dp"/>
+        android:layout_y="269dp" />
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/image2"
-        android:layout_width="220dp"
-        android:layout_height="220dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:layout_x="369dp"
-        android:layout_y="269dp"/>
+        android:layout_y="269dp" />
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/image3"
-        android:layout_width="220dp"
-        android:layout_height="220dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:layout_x="663dp"
-        android:layout_y="269dp"/>
+        android:layout_y="269dp" />
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/image4"
-        android:layout_width="220dp"
-        android:layout_height="220dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:layout_x="957dp"
-        android:layout_y="269dp"/>
+        android:layout_y="269dp" />
 
     <ImageView
         android:id="@+id/imageView1"
-        android:layout_width="220dp"
-        android:layout_height="220dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:layout_x="69dp"
         android:layout_y="269dp"
         android:background="@drawable/bd_circle_shape"
@@ -183,8 +181,8 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="220dp"
-        android:layout_height="220dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:layout_x="369dp"
         android:layout_y="269dp"
         android:background="@drawable/bd_circle_shape"
@@ -192,8 +190,8 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="220dp"
-        android:layout_height="220dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:layout_x="663dp"
         android:layout_y="269dp"
         android:background="@drawable/bd_circle_shape"
@@ -201,11 +199,40 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="220dp"
-        android:layout_height="220dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:layout_x="957dp"
         android:layout_y="269dp"
         android:background="@drawable/bd_circle_shape"
         android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="219dp"
+        android:layout_y="662dp"
+        android:text="@string/mid"
+        android:textColor="#8377AC"
+        android:textIsSelectable="false"
+        android:textSize="50sp" />
+
+    <TextView
+        android:id="@+id/txtAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="250dp"
+        android:layout_y="662dp"
+        android:textColor="#8377AC"
+        android:textSize="50sp" />
+
+    <TextView
+        android:id="@+id/txtThis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="157dp"
+        android:layout_y="662dp"
+        android:textColor="#8377AC"
+        android:textSize="50sp" />
 
 </AbsoluteLayout>
