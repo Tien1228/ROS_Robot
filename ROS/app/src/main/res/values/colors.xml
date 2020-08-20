@@ -4,4 +4,5 @@
     <color name="mainwordcolor">#1C0958</color>
     <color name="keywordcolor">#8377AC</color>
     <color name="btnwordcolor">#DB7093</color>
+    <color name="white">#FFFFFF</color>
 </resources>

@@ -1,6 +1,7 @@
 package com.example.ros;
 
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -8,6 +9,8 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.ViewCompat;
 
@@ -121,7 +124,7 @@ public class Brand extends Page {
         try {
             // 如果載入的是gif動圖，第一步需要先將gif動圖資源轉化為GifDrawable
             // 將gif圖資源轉化為GifDrawable
-            GifDrawable gifDrawable = new GifDrawable(getResources(), R.drawable.loading_pic);
+            GifDrawable gifDrawable = new GifDrawable(getResources(), R.drawable.loading);
             // gif1載入一個動態圖gif
             image1.setImageDrawable(gifDrawable);
             image2.setImageDrawable(gifDrawable);
@@ -156,6 +159,7 @@ public class Brand extends Page {
         });
 
         btL.setOnClickListener(new OnClickListener(){
+            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             public void onClick(View v){
                 a-=4; b-=4; c-=4; d-=4;
 
@@ -179,6 +183,7 @@ public class Brand extends Page {
                         imageView4.setVisibility(View.GONE);
                         txt4.setVisibility(View.GONE);
                         btR.setVisibility(View.GONE);
+                        setVis(image4);
                     }else if(num == 2){
                         txt1.setText(Name.get(a));
                         txt2.setText(Name.get(b));
@@ -192,6 +197,8 @@ public class Brand extends Page {
                         txt3.setVisibility(View.GONE);
                         txt4.setVisibility(View.GONE);
                         btR.setVisibility(View.GONE);
+                        setVis(image3);
+                        setVis(image4);
                     }else if(num == 3){
                         txt1.setText(Name.get(a));
                         setLOGO(imageView1, logo.get(a));
@@ -206,6 +213,9 @@ public class Brand extends Page {
                         txt3.setVisibility(View.GONE);
                         txt4.setVisibility(View.GONE);
                         btR.setVisibility(View.GONE);
+                        setVis(image2);
+                        setVis(image3);
+                        setVis(image4);
                     }
                 }else if(d == total-1){
                     txt1.setText(Name.get(a));
@@ -221,7 +231,16 @@ public class Brand extends Page {
                     setLOGO(imageView2, logo.get(b));
                     setLOGO(imageView3, logo.get(c));
                     setLOGO(imageView4, logo.get(d));
+                    imageView1.setBackgroundResource(R.drawable.bd_circle_shape);
+                    imageView2.setBackgroundResource(R.drawable.bd_circle_shape);
+                    imageView3.setBackgroundResource(R.drawable.bd_circle_shape);
+                    imageView4.setBackgroundResource(R.drawable.bd_circle_shape);
                     btR.setVisibility(View.GONE);
+
+                    image1.setVisibility(View.VISIBLE);
+                    image2.setVisibility(View.VISIBLE);
+                    image3.setVisibility(View.VISIBLE);
+                    image4.setVisibility(View.VISIBLE);
                 }else{
                     txt1.setText(Name.get(a));
                     txt2.setText(Name.get(b));
@@ -236,7 +255,17 @@ public class Brand extends Page {
                     setLOGO(imageView2, logo.get(b));
                     setLOGO(imageView3, logo.get(c));
                     setLOGO(imageView4, logo.get(d));
-                    btR.setVisibility(View.VISIBLE);}
+                    imageView1.setBackgroundResource(R.drawable.bd_circle_shape);
+                    imageView2.setBackgroundResource(R.drawable.bd_circle_shape);
+                    imageView3.setBackgroundResource(R.drawable.bd_circle_shape);
+                    imageView4.setBackgroundResource(R.drawable.bd_circle_shape);
+                    btR.setVisibility(View.VISIBLE);
+
+                    image1.setVisibility(View.VISIBLE);
+                    image2.setVisibility(View.VISIBLE);
+                    image3.setVisibility(View.VISIBLE);
+                    image4.setVisibility(View.VISIBLE);
+                }
             }
         });
 
@@ -264,6 +293,7 @@ public class Brand extends Page {
                         imageView4.setVisibility(View.GONE);
                         txt4.setVisibility(View.GONE);
                         btR.setVisibility(View.GONE);
+                        setVis(image4);
                     }else if(num == 2){
                         txt1.setText(Name.get(a));
                         txt2.setText(Name.get(b));
@@ -277,6 +307,8 @@ public class Brand extends Page {
                         txt3.setVisibility(View.GONE);
                         txt4.setVisibility(View.GONE);
                         btR.setVisibility(View.GONE);
+                        setVis(image3);
+                        setVis(image4);
                     }else if(num == 3){
                         txt1.setText(Name.get(a));
                         setLOGO(imageView1, logo.get(a));
@@ -291,6 +323,9 @@ public class Brand extends Page {
                         txt3.setVisibility(View.GONE);
                         txt4.setVisibility(View.GONE);
                         btR.setVisibility(View.GONE);
+                        setVis(image2);
+                        setVis(image3);
+                        setVis(image4);
                     }
                 }else if(d == total-1){
                     txt1.setText(Name.get(a));
@@ -306,7 +341,16 @@ public class Brand extends Page {
                     setLOGO(imageView2, logo.get(b));
                     setLOGO(imageView3, logo.get(c));
                     setLOGO(imageView4, logo.get(d));
+                    imageView1.setBackgroundResource(R.drawable.bd_circle_shape);
+                    imageView2.setBackgroundResource(R.drawable.bd_circle_shape);
+                    imageView3.setBackgroundResource(R.drawable.bd_circle_shape);
+                    imageView4.setBackgroundResource(R.drawable.bd_circle_shape);
                     btR.setVisibility(View.GONE);
+
+                    image1.setVisibility(View.VISIBLE);
+                    image2.setVisibility(View.VISIBLE);
+                    image3.setVisibility(View.VISIBLE);
+                    image4.setVisibility(View.VISIBLE);
                 }else{
                     txt1.setText(Name.get(a));
                     txt2.setText(Name.get(b));
@@ -321,7 +365,17 @@ public class Brand extends Page {
                     setLOGO(imageView2, logo.get(b));
                     setLOGO(imageView3, logo.get(c));
                     setLOGO(imageView4, logo.get(d));
-                    btR.setVisibility(View.VISIBLE);}
+                    imageView1.setBackgroundResource(R.drawable.bd_circle_shape);
+                    imageView2.setBackgroundResource(R.drawable.bd_circle_shape);
+                    imageView3.setBackgroundResource(R.drawable.bd_circle_shape);
+                    imageView4.setBackgroundResource(R.drawable.bd_circle_shape);
+                    btR.setVisibility(View.VISIBLE);
+
+                    image1.setVisibility(View.VISIBLE);
+                    image2.setVisibility(View.VISIBLE);
+                    image3.setVisibility(View.VISIBLE);
+                    image4.setVisibility(View.VISIBLE);
+                }
             }
         });
 
@@ -411,10 +465,6 @@ public class Brand extends Page {
                                 setLOGO(imageView2, logo.get(1));
                                 setLOGO(imageView3, logo.get(2));
                                 setLOGO(imageView4, logo.get(3));
-                                setVis(image1);
-                                setVis(image2);
-                                setVis(image3);
-                                setVis(image4);
                                 Log.e("Finish", "Finish");
                             }
                         }
@@ -472,7 +522,6 @@ public class Brand extends Page {
                                 imageView.setImageBitmap(resource);
                             }
                         });
-
                 imageView.setVisibility(View.VISIBLE);
             }
         });

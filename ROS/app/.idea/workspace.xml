@@ -31,6 +31,13 @@
   <component name="FavoritesManager">
     <favorites_list name="ROS" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="resourceFile" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectId" id="1gHe7hvu748p2KDXVEBwZmgibJe" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -123,22 +130,30 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="722" y="91" key="#Inspections/0.0.1536.864@0.0.1536.864" timestamp="1597864593583" />
-    <state width="1493" height="168" key="GridCell.Tab.0.bottom" timestamp="1597860716374">
+    <state x="698" y="187" key="AndroidCreateResourceFileDialog" timestamp="1597891321331">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="168" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1597860716374" />
-    <state width="1493" height="168" key="GridCell.Tab.0.center" timestamp="1597860716373">
+    <state x="698" y="187" key="AndroidCreateResourceFileDialog/0.0.1536.864@0.0.1536.864" timestamp="1597891321331" />
+    <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1597881493707">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="168" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1597860716373" />
-    <state width="1493" height="168" key="GridCell.Tab.0.left" timestamp="1597860716373">
+    <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1597881493707" />
+    <state width="1493" height="160" key="GridCell.Tab.0.bottom" timestamp="1597890028995">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="168" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1597860716373" />
-    <state width="1493" height="168" key="GridCell.Tab.0.right" timestamp="1597860716373">
+    <state width="1493" height="160" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1597890028995" />
+    <state width="1493" height="160" key="GridCell.Tab.0.center" timestamp="1597890028994">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="168" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1597860716373" />
+    <state width="1493" height="160" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1597890028994" />
+    <state width="1493" height="160" key="GridCell.Tab.0.left" timestamp="1597890028993">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="160" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1597890028993" />
+    <state width="1493" height="160" key="GridCell.Tab.0.right" timestamp="1597890028994">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="160" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1597890028994" />
     <state x="93" y="93" width="1350" height="678" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1597866532935">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
