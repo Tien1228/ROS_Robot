@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E3DBD5"
+    tools:context=".MainActivity"
+    android:radius="30dp"
+    android:animateLayoutChanges="true">
+
+
+    <Button
+        android:id="@+id/btCancel"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"
+        android:layout_x="1169dp"
+        android:layout_y="37dp"
+        android:background="@mipmap/cancel"
+        android:textSize="35px" />
+
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="395dp"
+        android:layout_height="50dp"
+        android:layout_x="127dp"
+        android:layout_y="480dp"
+        android:text="專櫃名稱："
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtLocation"
+        android:layout_width="395dp"
+        android:layout_height="50dp"
+        android:layout_x="540dp"
+        android:layout_y="480dp"
+        android:text="專櫃位置："
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtOpenTime"
+        android:layout_width="805dp"
+        android:layout_height="wrap_content"
+        android:layout_x="127dp"
+        android:layout_y="530dp"
+        android:text="營業時間："
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtContent"
+        android:layout_width="770dp"
+        android:layout_height="120dp"
+        android:layout_x="127dp"
+        android:layout_y="599dp"
+        android:maxLines="100"
+        android:scrollbars="vertical"
+        android:singleLine="false"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageBig"
+        android:layout_width="700dp"
+        android:layout_height="360dp"
+        android:layout_x="449dp"
+        android:layout_y="106dp"
+
+        android:background="@color/white"
+        android:src="@drawable/bd_circle_shape" />
+
+    <ImageView
+        android:id="@+id/imageQRcode"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_x="951dp"
+        android:layout_y="505dp"
+        android:background="@mipmap/loading_pic"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/imageLogo"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_x="127dp"
+        android:layout_y="160dp"
+        android:background="@mipmap/loading_pic" />
+
+    <ImageView
+        android:id="@+id/imageBackground"
+        android:layout_width="1150dp"
+        android:layout_height="670dp"
+        android:layout_x="65dp"
+        android:layout_y="67dp"
+        android:background="@drawable/bd_circle_shape"
+        tools:visibility="visible" />
+
+</AbsoluteLayout>

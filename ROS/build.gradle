@@ -18,6 +18,11 @@ allprojects {
         google()
         jcenter()
         mavenCentral()
+
+//        // for MQTT
+//        maven {
+//            url "https://repo.eclipse.org/content/repositories/paho-releases/"
+//        }
     }
 }
 
