@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.core.view.ViewCompat;
@@ -23,12 +24,13 @@ public class Info extends Page{
     private TextView txtName;
     private TextView txtLocation;
     private TextView txtOpenTime;
-    private TextView txtContent;
+//    private TextView txtContent;
     private ImageView imageQRcode;
     private ImageView imageLogo;
     private ImageView imageBackground;
     private ImageView imageBig;
     private Button btCancel;
+    private LinearLayout lay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,27 +54,28 @@ public class Info extends Page{
         final String Floor = bundle4.getString("Floor");
         Log.e("Floor", Floor);
 
-        Bundle bundle5 = this.getIntent().getExtras();
-        final String Content = bundle5.getString("Content");
-        Log.e("Content", Content);
+//        Bundle bundle5 = this.getIntent().getExtras();
+//        final String Content = bundle5.getString("Content");
+//        Log.e("Content", Content);
 
         Bundle bundle6 = this.getIntent().getExtras();
         final String OpenTime = bundle6.getString("OpenTime");
         Log.e("OpenTime", OpenTime);
 
         Bundle bundle7 = this.getIntent().getExtras();
-        final String Link = bundle7.getString("Link");
-        Log.e("Link", Link);
+        final String StoreID = bundle7.getString("StoreID");
+        Log.e("StoreID", StoreID);
 
         Bundle bundle8 = this.getIntent().getExtras();
         final String Big = bundle8.getString("Big");
         Log.e("Big", Big);
 
         txtName = (TextView)findViewById(R.id.txtName);
+        lay = (LinearLayout) findViewById(R.id.lay);
         txtLocation = (TextView)findViewById(R.id.txtLocation);
         txtOpenTime = (TextView)findViewById(R.id.txtOpenTime);
-        txtContent = (TextView)findViewById(R.id.txtContent);
-        txtContent.setMovementMethod(ScrollingMovementMethod.getInstance()); //實現滾動
+//        txtContent = (TextView)findViewById(R.id.txtContent);
+//        txtContent.setMovementMethod(ScrollingMovementMethod.getInstance()); //實現滾動
         imageQRcode = (ImageView)findViewById(R.id.imageQRcode);
         imageLogo = (ImageView)findViewById(R.id.imageLogo);
         imageBackground = (ImageView)findViewById(R.id.imageBackground);
@@ -80,23 +83,24 @@ public class Info extends Page{
         btCancel = (Button)findViewById(R.id.btCancel);
 
         ViewCompat.setElevation(imageBackground, 12);
-        ViewCompat.setElevation(txtName, 15);
-        ViewCompat.setElevation(txtLocation, 15);
+        ViewCompat.setElevation(lay, 15);
+//        ViewCompat.setElevation(txtName, 15);
+//        ViewCompat.setElevation(txtLocation, 15);
         ViewCompat.setElevation(txtOpenTime, 15);
-        ViewCompat.setElevation(txtContent, 15);
+//        ViewCompat.setElevation(txtContent, 15);
         ViewCompat.setElevation(imageQRcode, 15);
         ViewCompat.setElevation(imageLogo, 15);
         ViewCompat.setElevation(imageBig, 15);
         ViewCompat.setElevation(btCancel, 15);
 
-        txtName.setText(txtName.getText() + Name);
-        txtOpenTime.setText(txtOpenTime.getText() + OpenTime);
-        txtLocation.setText(txtLocation.getText() + Zone+ "區" + Floor);
-        txtContent.setText(Content);
+        txtName.setText("專櫃名稱：" + Name);
+        txtOpenTime.setText("營業時間：" + OpenTime);
+        txtLocation.setText("　　"+"專櫃位置：" + Zone+ "區" + Floor);
+//        txtContent.setText(Content);
 
         setLOGO(imageLogo, Logo);
         setLOGO(imageBig, Big);
-        getCode(imageQRcode, Link);
+        getCode(imageQRcode, StoreID);
 
         btCancel.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
@@ -165,19 +169,20 @@ public class Info extends Page{
         });
     }
 
-    private void getCode(final ImageView imageView,final String url){
-        if (url.equals("")){
-            imageQRcode.setVisibility(View.GONE);
-            txtContent.getLayoutParams().width = (int) getResources().getDimension(R.dimen.txtContent_width);
-        }else {
+    private void getCode(final ImageView imageView,final String ID){
+//        if (url.equals("")){
+//            imageQRcode.setVisibility(View.GONE);
+//            txtContent.getLayoutParams().width = (int) getResources().getDimension(R.dimen.txtContent_width);
+//        }else {
+
+            String url = "http://www.edamall.com.tw/BrandGuideImage_byFloor.aspx?BrandId="+ID;
             BarcodeEncoder encoder = new BarcodeEncoder();
             try{
-                //Bitmap bit = encoder.encodeBitmap(etContent.getText().toString(),BarcodeFormat.QR_CODE,250,250);
                 Bitmap bit = encoder.encodeBitmap(url , BarcodeFormat.QR_CODE,200,200); // change Image Size here
                 imageView.setImageBitmap(bit);
             }catch (WriterException e){
                 e.printStackTrace();
             }
-        }
+//        }
     }
 }

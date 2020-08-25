@@ -471,16 +471,16 @@ public class Brand extends Page {
                 bundle4.putString("Floor", floor.get(a));
                 intent.putExtras(bundle4);
 
-                Bundle bundle5 = new Bundle();
-                bundle5.putString("Content", content.get(a));
-                intent.putExtras(bundle5);
+//                Bundle bundle5 = new Bundle();
+//                bundle5.putString("Content", content.get(a));
+//                intent.putExtras(bundle5);
 
                 Bundle bundle6 = new Bundle();
                 bundle6.putString("OpenTime", openTime.get(a));
                 intent.putExtras(bundle6);
 
                 Bundle bundle7 = new Bundle();
-                bundle7.putString("Link", link.get(a));
+                bundle7.putString("StoreID", storeID.get(a));
                 intent.putExtras(bundle7);
 
                 Bundle bundle8 = new Bundle();
@@ -512,16 +512,16 @@ public class Brand extends Page {
                 bundle4.putString("Floor", floor.get(b));
                 intent.putExtras(bundle4);
 
-                Bundle bundle5 = new Bundle();
-                bundle5.putString("Content", content.get(b));
-                intent.putExtras(bundle5);
+//                Bundle bundle5 = new Bundle();
+//                bundle5.putString("Content", content.get(b));
+//                intent.putExtras(bundle5);
 
                 Bundle bundle6 = new Bundle();
                 bundle6.putString("OpenTime", openTime.get(b));
                 intent.putExtras(bundle6);
 
                 Bundle bundle7 = new Bundle();
-                bundle7.putString("Link", link.get(b));
+                bundle7.putString("StoreID", storeID.get(a));
                 intent.putExtras(bundle7);
 
                 Bundle bundle8 = new Bundle();
@@ -553,16 +553,16 @@ public class Brand extends Page {
                 bundle4.putString("Floor", floor.get(c));
                 intent.putExtras(bundle4);
 
-                Bundle bundle5 = new Bundle();
-                bundle5.putString("Content", content.get(c));
-                intent.putExtras(bundle5);
+//                Bundle bundle5 = new Bundle();
+//                bundle5.putString("Content", content.get(c));
+//                intent.putExtras(bundle5);
 
                 Bundle bundle6 = new Bundle();
                 bundle6.putString("OpenTime", openTime.get(c));
                 intent.putExtras(bundle6);
 
                 Bundle bundle7 = new Bundle();
-                bundle7.putString("Link", link.get(c));
+                bundle7.putString("StoreID", storeID.get(a));
                 intent.putExtras(bundle7);
 
                 Bundle bundle8 = new Bundle();
@@ -594,16 +594,16 @@ public class Brand extends Page {
                 bundle4.putString("Floor", floor.get(d));
                 intent.putExtras(bundle4);
 
-                Bundle bundle5 = new Bundle();
-                bundle5.putString("Content", content.get(d));
-                intent.putExtras(bundle5);
+//                Bundle bundle5 = new Bundle();
+//                bundle5.putString("Content", content.get(d));
+//                intent.putExtras(bundle5);
 
                 Bundle bundle6 = new Bundle();
                 bundle6.putString("OpenTime", openTime.get(d));
                 intent.putExtras(bundle6);
 
                 Bundle bundle7 = new Bundle();
-                bundle7.putString("Link", link.get(d));
+                bundle7.putString("StoreID", storeID.get(a));
                 intent.putExtras(bundle7);
 
                 Bundle bundle8 = new Bundle();
