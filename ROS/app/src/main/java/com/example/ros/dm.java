@@ -1,15 +1,25 @@
 package com.example.ros;
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.core.view.ViewCompat;
+
+import com.bumptech.glide.Glide;
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.WriterException;
+import com.journeyapps.barcodescanner.BarcodeEncoder;
+
+import java.util.ArrayList;
 
 public class Dm extends Page {
+
+//    private ArrayList<Integer> images2 = new ArrayList<Integer>();
 
     int[] images = new int[] { R.drawable.page_1,R.drawable.page_2,R.drawable.page_3,R.drawable.page_4,R.drawable.page_5,
                                 R.drawable.page_6,R.drawable.page_7,R.drawable.page_8,R.drawable.page_9,R.drawable.page_10,
@@ -19,18 +29,74 @@ public class Dm extends Page {
                                 R.drawable.page_26,R.drawable.page_27,R.drawable.page_28,R.drawable.page_29,R.drawable.page_30,
                                 R.drawable.page_31,R.drawable.page_32};
 
-
-    private ZoomImageView zoomImageView;
+    private ImageView imageDM;
+    private ImageView imageQR;
+    private TextView txtNum;
+    private TextView txtThis;
+    private Button btR;
+    private Button btL;
+    private int i=0;
+    private int thisNum=1;
+    private int length = images.length;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.dm);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
 
-        zoomImageView = (ZoomImageView) findViewById(R.id.zoom_image_view);
-//        Bitmap bitmap = ;
-//        zoomImageView.setImageBitmap(bitmap);
+        final String DMurl = "http://www.edamall.com.tw/DM_MALL/DM_Mobile/DM_1/index.html";
+
+        imageDM = (ImageView)findViewById(R.id.imageDM);
+        imageQR = (ImageView)findViewById(R.id.imageQR);
+        txtNum = (TextView)findViewById(R.id.txtNum);
+        txtThis = (TextView)findViewById(R.id.txtThis);
+        btR = (Button)findViewById(R.id.btR);
+        btL = (Button)findViewById(R.id.btL);
+
+        ViewCompat.setElevation(imageDM, 15);
+
+//        for (int k=0; k<length; k++){
+//            images2.add(images[k]);
+//        }
+
+//        txtNum.setText(length);
+//        txtThis.setText(thisNum);
+        setLOGO(imageDM, images[0]);
+        getCode(imageQR, DMurl);
+
+        btR.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                imageDM.setVisibility(View.INVISIBLE);
+                if (i + 1 == length) {
+                    i = 0;
+//                    thisNum = 1;
+                } else {
+                    i++;
+                    thisNum++;
+                }
+                setLOGO(imageDM, images[i]);
+//                txtThis.setText(thisNum);
+            }
+        });
+
+        btL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                imageDM.setVisibility(View.INVISIBLE);
+                if (i == 0) {
+                    i = length-1;
+//                    thisNum = length;
+                } else {
+                    i--;
+                    thisNum--;
+                }
+                setLOGO(imageDM, images[i]);
+//                txtThis.setText(thisNum);
+            }
+        });
     }
     @Override
     protected void onStart() {
@@ -74,4 +140,26 @@ public class Dm extends Page {
                             | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         }
     }
+
+    private void getCode(final ImageView imageView,final String ID){
+        String url = ID;
+        BarcodeEncoder encoder = new BarcodeEncoder();
+        try{
+            Bitmap bit = encoder.encodeBitmap(url , BarcodeFormat.QR_CODE,200,200); // change Image Size here
+            imageView.setImageBitmap(bit);
+        }catch (WriterException e){
+            e.printStackTrace();
+        }
+    }
+
+    private void setLOGO(final ImageView imageView, final int value){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Glide.with(Dm.this).load(value).into(imageView);
+                imageView.setVisibility(View.VISIBLE);
+            }
+        });
+    }
 }
+
