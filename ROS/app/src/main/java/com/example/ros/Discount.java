@@ -1,9 +1,13 @@
 package com.example.ros;
 
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 public class Discount extends Page {
 
@@ -72,7 +76,14 @@ public class Discount extends Page {
 
         btBrand.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
-                Discount.super.SwitchPage(nextPage);
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "目前淡季尚無活動，敬請期待", Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                LinearLayout toastView = (LinearLayout) toast.getView();
+                ImageView imageCodeProject = new ImageView(getApplicationContext());
+                imageCodeProject.setImageResource(R.drawable.eda);
+                toastView.addView(imageCodeProject, 0);
+                toast.show();
             }
         });
 

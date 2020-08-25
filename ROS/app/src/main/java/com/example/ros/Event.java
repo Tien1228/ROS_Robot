@@ -76,14 +76,7 @@ public class Event extends Page {
 
         btSpecial.setOnClickListener(new OnClickListener(){
             public void onClick(View v){
-                Toast toast = Toast.makeText(getApplicationContext(),
-                        "目前淡季尚無活動，敬請期待", Toast.LENGTH_LONG);
-                toast.setGravity(Gravity.CENTER, 0, 0);
-                LinearLayout toastView = (LinearLayout) toast.getView();
-                ImageView imageCodeProject = new ImageView(getApplicationContext());
-                imageCodeProject.setImageResource(R.drawable.eda);
-                toastView.addView(imageCodeProject, 0);
-                toast.show();
+                Event.super.SwitchPage(Information.class);
             }
         });
 

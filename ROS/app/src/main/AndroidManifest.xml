@@ -30,6 +30,8 @@
         <activity android:name=".Failed"/>
         <activity android:name=".Info"/>
         <activity android:name=".Dm"/>
+        <activity android:name=".Information"/>
+        <activity android:name=".InfoAct"/>
     </application>
 
 </manifest>

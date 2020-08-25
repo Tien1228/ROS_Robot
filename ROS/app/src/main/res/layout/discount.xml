@@ -100,7 +100,7 @@
         android:layout_height="wrap_content"
         android:layout_x="342dp"
         android:layout_y="451dp"
-        android:text="品牌優惠"
+        android:text="特別活動"
         android:textColor="#30082A"
         android:textSize="70px"
         android:textStyle="bold" />

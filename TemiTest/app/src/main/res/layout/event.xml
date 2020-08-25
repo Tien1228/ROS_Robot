@@ -56,7 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_x="307dp"
         android:layout_y="438dp"
-        android:text="活動快訊"
+        android:text="特別活動"
         android:textColor="#30082A"
         android:textSize="70px"
         android:textStyle="bold" />

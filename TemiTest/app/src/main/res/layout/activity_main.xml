@@ -96,4 +96,5 @@
         android:layout_x="51dp"
         android:layout_y="157dp"
         android:background="#B4A5C6"/>
+
 </AbsoluteLayout>

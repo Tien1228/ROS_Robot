@@ -55,9 +55,9 @@
 
     <ImageView
         android:id="@+id/imageQR"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_x="1007dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="1045dp"
         android:layout_y="585dp" />
 
     <TextView
