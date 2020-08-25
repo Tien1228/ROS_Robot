@@ -30,9 +30,16 @@
         <activity android:name=".Game"/>
         <activity android:name=".Success"/>
         <activity android:name=".Failed"/>
+        <activity android:name=".Info"/>
+        <activity android:name=".Dm"/>
 
         <!-- Mqtt Service -->
         <service android:name="org.eclipse.paho.android.service.MqttService"></service>
+
+        <meta-data
+            android:name="@string/metadata_skill"
+            android:value="@string/app_name" />
+
     </application>
 
     <!-- WIFI Permission -->

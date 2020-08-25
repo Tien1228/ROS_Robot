@@ -1,9 +1,13 @@
 package com.example.ros;
 
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 public class Event extends Page {
 
@@ -11,7 +15,7 @@ public class Event extends Page {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.event);
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
         buildViews();
     }
     @Override
@@ -43,6 +47,20 @@ public class Event extends Page {
         super.onDestroy();
     }
 
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus) {
+            getWindow().getDecorView().setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+        }
+    }
+
     private  void buildViews(){
         final Class nextPage = MainActivity.class;
 
@@ -58,13 +76,20 @@ public class Event extends Page {
 
         btSpecial.setOnClickListener(new OnClickListener(){
             public void onClick(View v){
-                Event.super.SwitchPage(nextPage);
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "目前淡季尚無活動，敬請期待", Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                LinearLayout toastView = (LinearLayout) toast.getView();
+                ImageView imageCodeProject = new ImageView(getApplicationContext());
+                imageCodeProject.setImageResource(R.drawable.eda);
+                toastView.addView(imageCodeProject, 0);
+                toast.show();
             }
         });
 
         btDM.setOnClickListener(new OnClickListener(){
             public void onClick(View v){
-                Event.super.SwitchPage(nextPage);
+                Event.super.SwitchPage(Dm.class);
             }
         });
 

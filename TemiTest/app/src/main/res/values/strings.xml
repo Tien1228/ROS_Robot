@@ -20,4 +20,5 @@
     <string name="service">專人協助 Customer Service</string>
     <string name="last_page">上一頁 Last Page</string>
     <string name="home">回首頁 Home Page</string>
+    <string name="mid">/</string>
 </resources>

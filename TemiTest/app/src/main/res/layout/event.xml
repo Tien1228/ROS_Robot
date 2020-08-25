@@ -40,7 +40,7 @@
         android:background="@mipmap/specialevent_foreground" />
 
     <TextView
-        android:id="@+id/discountbtn"
+        android:id="@+id/txtName"
         android:layout_width="177dp"
         android:layout_height="wrap_content"
         android:layout_x="722dp"
