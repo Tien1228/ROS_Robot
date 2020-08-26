@@ -13,6 +13,8 @@ import android.widget.TextView;
 import androidx.core.view.ViewCompat;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
+import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
 import com.google.zxing.BarcodeFormat;
@@ -29,7 +31,7 @@ public class Info extends Page{
     private ImageView imageLogo;
     private ImageView imageBackground;
     private ImageView imageBig;
-    private Button btCancel;
+    private ImageView btCancel;
     private LinearLayout lay;
 
     @Override
@@ -80,7 +82,7 @@ public class Info extends Page{
         imageLogo = (ImageView)findViewById(R.id.imageLogo);
         imageBackground = (ImageView)findViewById(R.id.imageBackground);
         imageBig = (ImageView)findViewById(R.id.imageBig);
-        btCancel = (Button)findViewById(R.id.btCancel);
+        btCancel = (ImageView)findViewById(R.id.btCancel);
 
         ViewCompat.setElevation(imageBackground, 12);
         ViewCompat.setElevation(lay, 15);
@@ -156,14 +158,9 @@ public class Info extends Page{
             @Override
             public void run() {
                 Glide.with(Info.this)
-                        .asBitmap()
                         .load(value)
-                        .into(new SimpleTarget<Bitmap>() {
-                            @Override
-                            public void onResourceReady(Bitmap resource, Transition<? super Bitmap> transition) {
-                                imageView.setImageBitmap(resource);
-                            }
-                        });
+                        .apply(RequestOptions.bitmapTransform(new RoundedCorners(25)))
+                        .into(imageView);
                 //imageView.setVisibility(View.VISIBLE);
             }
         });

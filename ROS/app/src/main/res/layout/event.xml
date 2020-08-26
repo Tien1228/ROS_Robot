@@ -8,6 +8,28 @@
     tools:context=".MainActivity"
     android:radius="30dp">
 
+    <ImageView
+        android:id="@+id/bt2"
+        android:layout_width="330dp"
+        android:layout_height="330dp"
+        android:layout_centerInParent="true"
+        android:layout_x="740dp"
+        android:layout_y="280dp"
+        android:alpha="0.9"
+        android:background="@drawable/btcircle"
+        android:foreground="@drawable/dm" />
+
+    <ImageView
+        android:id="@+id/bt1"
+        android:layout_width="330dp"
+        android:layout_height="330dp"
+        android:layout_centerInParent="true"
+        android:layout_x="203dp"
+        android:layout_y="280dp"
+        android:alpha="0.9"
+        android:background="@drawable/btcircle"
+        android:foreground="@drawable/specialevent" />
+
     <TextView
         android:id="@+id/main"
         android:layout_width="wrap_content"
@@ -17,48 +39,6 @@
         android:text="活動快訊"
         android:textColor="#1C0958"
         android:textSize="85px"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/bt2"
-        android:layout_width="255dp"
-        android:layout_height="255dp"
-        android:layout_centerInParent="true"
-        android:layout_x="680dp"
-        android:layout_y="258dp"
-        android:alpha="0.4"
-        android:background="@mipmap/dm_foreground" />
-
-    <Button
-        android:id="@+id/bt1"
-        android:layout_width="255dp"
-        android:layout_height="255dp"
-        android:layout_centerInParent="true"
-        android:layout_x="276dp"
-        android:layout_y="258dp"
-        android:alpha="0.3"
-        android:background="@mipmap/specialevent_foreground" />
-
-    <TextView
-        android:id="@+id/txtName"
-        android:layout_width="177dp"
-        android:layout_height="wrap_content"
-        android:layout_x="722dp"
-        android:layout_y="438dp"
-        android:text="當季DM"
-        android:textColor="#30082A"
-        android:textSize="70px"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/eventbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="307dp"
-        android:layout_y="438dp"
-        android:text="特別活動"
-        android:textColor="#30082A"
-        android:textSize="70px"
         android:textStyle="bold" />
 
     <ImageView

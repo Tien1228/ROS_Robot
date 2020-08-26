@@ -4,7 +4,7 @@
     <!-- rectangle表示为矩形 -->
 
     <!-- 填充的颜色 -->
-    <solid android:color="@color/white" />
+    <solid android:color="#F9F3C7" />
 
     <!-- android:radius 圆角的半径 -->
     <corners

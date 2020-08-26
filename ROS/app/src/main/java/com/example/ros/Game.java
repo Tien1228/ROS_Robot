@@ -1,13 +1,21 @@
 package com.example.ros;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.text.method.DigitsKeyListener;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.ViewCompat;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Game extends Page {
     private int num = getrandom(1, 15);
@@ -15,12 +23,27 @@ public class Game extends Page {
     int min = 1;
     int max = 15;
     private String St = new String("失敗");
+    private EditText inputText;
+    private Button btGO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game);
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+
+        inputText = (EditText)findViewById(R.id.txtSub);
+        btGO = (Button)findViewById(R.id.btGO);
+
+        ViewCompat.setElevation(inputText, 20);
+
+        inputText.setKeyListener(DigitsKeyListener.getInstance("0123456789"));
+        inputText.setFocusable(true);
+        inputText.setFocusableInTouchMode(true);
+        inputText.requestFocus(); //先將inputText取得焦點
+        waitPop();//再另一方法裡等待彈出,因為在onCreate()方法中android會做一些準備工作,使鍵盤無法彈出,那麼我們就等一會兒,個人覺得0.3秒比較好。
+        //等待彈出方法
+
         buildViews();
     }
     @Override
@@ -67,12 +90,8 @@ public class Game extends Page {
     }
 
     private  void buildViews() {
-        final Button btGO;
-        final TextView txtInput;
         final TextView txtRange;
 
-        btGO = (Button) findViewById(R.id.btGO);
-        txtInput = (TextView) findViewById(R.id.txtSub);
         txtRange = (TextView) findViewById(R.id.range);
         txtRange.setText("1~15");
 
@@ -80,7 +99,7 @@ public class Game extends Page {
             public void onClick(View v) {
                 i++;
 
-                String S = txtInput.getText().toString();
+                String S = inputText.getText().toString();
                 int Input= Integer.parseInt(S);
                 Run(Input);
 
@@ -129,5 +148,16 @@ public class Game extends Page {
 
     private static int getrandom(int min, int max) {
         return (int)(Math.random()*(max-min+1)+min);
+    }
+
+    private void waitPop() {
+        Timer timer = new Timer();//開啟一個時間等待任務
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                InputMethodManager imm = (InputMethodManager)inputText.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);//得到系統的輸入方法服務
+                imm.showSoftInput(inputText, 0);
+            }
+        }, 300);
     }
 }

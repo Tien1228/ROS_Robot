@@ -15,6 +15,8 @@ import androidx.annotation.RequiresApi;
 import androidx.core.view.ViewCompat;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
+import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
 
@@ -48,7 +50,10 @@ public class Information extends Page {
     private int c = 2;
     private ArrayList<String> NewsID = new ArrayList<String>();
     private ArrayList<String> Title = new ArrayList<String>();
+    private ArrayList<String> Content = new ArrayList<String>();
+    private ArrayList<String> ACTIVITY_DATE = new ArrayList<String>();
     private ArrayList<String> INDEX_PIC_PATH = new ArrayList<String>();
+    private ArrayList<String> INDEX_PIC_PATH2 = new ArrayList<String>();
 
     private TextView txt1;
     private TextView txt2;
@@ -335,6 +340,14 @@ public class Information extends Page {
                 bundle1.putString("NewsID", NewsID.get(a));
                 intent.putExtras(bundle1);
 
+                Bundle bundle2 = new Bundle();
+                bundle2.putString("Content", Content.get(a));
+                intent.putExtras(bundle2);
+
+                Bundle bundle3 = new Bundle();
+                bundle3.putString("INDEX_PIC_PATH", INDEX_PIC_PATH.get(a));
+                intent.putExtras(bundle3);
+
                 startActivity(intent);
             }
         });
@@ -348,6 +361,14 @@ public class Information extends Page {
                 bundle1.putString("NewsID", NewsID.get(b));
                 intent.putExtras(bundle1);
 
+                Bundle bundle2 = new Bundle();
+                bundle2.putString("Content", Content.get(b));
+                intent.putExtras(bundle2);
+
+                Bundle bundle3 = new Bundle();
+                bundle3.putString("INDEX_PIC_PATH", INDEX_PIC_PATH.get(b));
+                intent.putExtras(bundle3);
+
                 startActivity(intent);
             }
         });
@@ -360,6 +381,14 @@ public class Information extends Page {
                 Bundle bundle1 = new Bundle();
                 bundle1.putString("NewsID", NewsID.get(c));
                 intent.putExtras(bundle1);
+
+                Bundle bundle2 = new Bundle();
+                bundle2.putString("Content", Content.get(c));
+                intent.putExtras(bundle2);
+
+                Bundle bundle3 = new Bundle();
+                bundle3.putString("INDEX_PIC_PATH", INDEX_PIC_PATH.get(c));
+                intent.putExtras(bundle3);
 
                 startActivity(intent);
             }
@@ -427,15 +456,24 @@ public class Information extends Page {
                         //取出name
                         String newsID = jsonObject.getString("NewsID");
                         String title = jsonObject.getString("Title");
+                        String content = jsonObject.getString("Content");
+                        String aCTIVITY_DATE = jsonObject.getString("ACTIVITY_DATE");
                         String iNDEX_PIC_PATH = jsonObject.getString("INDEX_PIC_PATH");
+                        String iNDEX_PIC_PATH2 = jsonObject.getString("INDEX_PIC_PATH2");
 
                         Log.e("NewsID", newsID);
                         Log.e("Title", title);
+                        Log.e("Content", content);
+                        Log.e("ACTIVITY_DATE", aCTIVITY_DATE);
                         Log.e("INDEX_PIC_PATH", iNDEX_PIC_PATH);
+                        Log.e("INDEX_PIC_PATH2", iNDEX_PIC_PATH2);
 
                             NewsID.add(newsID);
                             Title.add(title);
+                            Content.add(content);
+                            ACTIVITY_DATE.add(aCTIVITY_DATE);
                             INDEX_PIC_PATH.add(iNDEX_PIC_PATH);
+                            INDEX_PIC_PATH2.add(iNDEX_PIC_PATH2);
 
                         if (i==2){
                             Log.e("Start", "Start");
@@ -512,14 +550,9 @@ public class Information extends Page {
             @Override
             public void run() {
                 Glide.with(Information.this)
-                        .asBitmap()
                         .load(value)
-                        .into(new SimpleTarget<Bitmap>() {
-                            @Override
-                            public void onResourceReady(Bitmap resource, Transition<? super Bitmap> transition) {
-                                imageView.setImageBitmap(resource);
-                            }
-                        });
+                        .apply(RequestOptions.bitmapTransform(new RoundedCorners(25)))
+                        .into(imageView);
                 imageView.setVisibility(View.VISIBLE);
             }
         });

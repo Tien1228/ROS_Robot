@@ -4,21 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E3DBD5"
-    tools:context=".MainActivity"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/dmback"
     android:radius="30dp"
-    android:animateLayoutChanges="true">
+    tools:context=".MainActivity">
 
 
-    <Button
+    <ImageView
         android:id="@+id/btCancel"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_centerInParent="true"
         android:layout_x="1169dp"
         android:layout_y="37dp"
-        android:background="@mipmap/cancel"
-        android:textSize="35px" />
+        android:background="@mipmap/cancel" />
 
     <LinearLayout
         android:id="@+id/lay"
@@ -78,7 +76,7 @@
         android:layout_x="449dp"
         android:layout_y="106dp"
 
-        android:background="@color/white"
+        android:background="@drawable/bd_circle_shape"
         android:src="@drawable/bd_circle_shape" />
 
     <ImageView
@@ -96,7 +94,8 @@
         android:layout_height="250dp"
         android:layout_x="127dp"
         android:layout_y="160dp"
-        android:background="@mipmap/loading_pic" />
+        android:background="@drawable/bd_circle_shape"
+        android:scaleType="fitCenter" />
 
     <ImageView
         android:id="@+id/imageBackground"
@@ -104,6 +103,7 @@
         android:layout_height="670dp"
         android:layout_x="65dp"
         android:layout_y="67dp"
+        android:alpha="0.9"
         android:background="@drawable/bd_circle_shape"
         tools:visibility="visible" />
 

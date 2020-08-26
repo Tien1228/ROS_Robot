@@ -1,13 +1,17 @@
 package com.example.ros;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import androidx.core.view.ViewCompat;
 
 public class Discount extends Page {
 
@@ -62,20 +66,22 @@ public class Discount extends Page {
     }
 
     private  void buildViews() {
-        final Class nextPage = MainActivity.class;
-
-        final Button btBrand;
-        final Button btGame;
+        final ImageView btBrand;
+        final ImageView btGame;
         final Button btBack;
         final Button btHome;
 
-        btBrand = (Button)findViewById(R.id.btBrand);
-        btGame = (Button)findViewById(R.id.btGame);
+        btBrand = (ImageView)findViewById(R.id.btBrand);
+        btGame = (ImageView)findViewById(R.id.btGame);
         btBack = (Button)findViewById(R.id.btBack);
         btHome = (Button)findViewById(R.id.btHome);
 
+        ViewCompat.setElevation(btBrand, 30);
+        ViewCompat.setElevation(btGame, 30);
+
         btBrand.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
+                btBrand.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.btanim));
                 Toast toast = Toast.makeText(getApplicationContext(),
                         "目前淡季尚無活動，敬請期待", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.CENTER, 0, 0);
@@ -89,8 +95,15 @@ public class Discount extends Page {
 
         btGame.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
-                Discount.super.SwitchPage(Story.class);
-                finish();
+                btGame.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.btanim));
+                btGame.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Discount.super.SwitchPage(Story.class);
+                        finish();
+                    }
+                }, 290);
+
             }
         });
 

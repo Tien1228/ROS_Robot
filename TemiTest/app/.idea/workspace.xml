@@ -49,7 +49,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SelectDeploymentTargetsDialog.selectedDevices" value="192.168.2.9:5555&#10;192.168.2.8:5555&#10;192.168.2.2:5555" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="D:/ROS2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RunManager">
@@ -130,6 +130,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="722" y="91" key="#Inspections/0.0.1536.864@0.0.1536.864" timestamp="1597864593583" />
+    <state x="447" y="90" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598430114139">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="447" y="90" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1598430114139" />
     <state x="698" y="187" key="AndroidCreateResourceFileDialog" timestamp="1597891321331">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

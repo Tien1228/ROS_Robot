@@ -1,13 +1,17 @@
 package com.example.ros;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import androidx.core.view.ViewCompat;
 
 public class Event extends Page {
 
@@ -62,27 +66,40 @@ public class Event extends Page {
     }
 
     private  void buildViews(){
-        final Class nextPage = MainActivity.class;
-
-        final Button btSpecial;
-        final Button btDM;
+        final ImageView btSpecial;
+        final ImageView btDM;
         final Button btBack;
         final Button btHome;
 
-        btSpecial = (Button)findViewById(R.id.bt1);
-        btDM = (Button)findViewById(R.id.bt2);
+        btSpecial = (ImageView)findViewById(R.id.bt1);
+        btDM = (ImageView)findViewById(R.id.bt2);
         btBack = (Button)findViewById(R.id.btBack);
         btHome = (Button)findViewById(R.id.btHome);
 
+        ViewCompat.setElevation(btSpecial, 30);
+        ViewCompat.setElevation(btDM, 30);
+
         btSpecial.setOnClickListener(new OnClickListener(){
             public void onClick(View v){
-                Event.super.SwitchPage(Information.class);
+                btSpecial.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.btanim));
+                btSpecial.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Event.super.SwitchPage(Information.class);
+                    }
+                }, 290);
             }
         });
 
         btDM.setOnClickListener(new OnClickListener(){
             public void onClick(View v){
-                Event.super.SwitchPage(Dm.class);
+                btDM.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.btanim));
+                btDM.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Event.super.SwitchPage(Dm.class);
+                    }
+                }, 290);
             }
         });
 

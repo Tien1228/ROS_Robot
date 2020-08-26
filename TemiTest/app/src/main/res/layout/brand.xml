@@ -177,7 +177,9 @@
         android:layout_x="69dp"
         android:layout_y="269dp"
         android:background="@drawable/bd_circle_shape"
-        android:visibility="gone" />
+        android:scaleType="fitCenter"
+        android:visibility="gone"
+        tools:visibility="gone" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -186,6 +188,7 @@
         android:layout_x="369dp"
         android:layout_y="269dp"
         android:background="@drawable/bd_circle_shape"
+        android:scaleType="fitCenter"
         android:visibility="gone" />
 
     <ImageView
@@ -195,6 +198,7 @@
         android:layout_x="663dp"
         android:layout_y="269dp"
         android:background="@drawable/bd_circle_shape"
+        android:scaleType="fitCenter"
         android:visibility="gone" />
 
     <ImageView
@@ -204,6 +208,7 @@
         android:layout_x="957dp"
         android:layout_y="269dp"
         android:background="@drawable/bd_circle_shape"
+        android:scaleType="fitCenter"
         android:visibility="gone" />
 
     <TextView

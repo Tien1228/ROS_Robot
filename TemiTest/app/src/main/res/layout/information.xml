@@ -105,7 +105,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_x="48dp"
-        android:layout_y="500dp"
+        android:layout_y="515dp"
         android:clickable="false"
         android:textAlignment="center"
         android:textSize="30sp" />
@@ -116,7 +116,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_x="459dp"
-        android:layout_y="500dp"
+        android:layout_y="515dp"
         android:clickable="false"
         android:textAlignment="center"
         android:textSize="30sp" />
@@ -127,7 +127,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_x="869dp"
-        android:layout_y="500dp"
+        android:layout_y="515dp"
         android:clickable="false"
         android:textAlignment="center"
         android:textSize="30sp" />
@@ -155,31 +155,34 @@
 
     <ImageView
         android:id="@+id/imageView1"
-        android:layout_width="369dp"
+        android:layout_width="358dp"
         android:layout_height="250dp"
         android:layout_x="48dp"
         android:layout_y="250dp"
         android:background="@drawable/bd_circle_shape"
+        android:scaleType="fitCenter"
         android:visibility="gone"
         tools:visibility="gone" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="369dp"
+        android:layout_width="358dp"
         android:layout_height="250dp"
         android:layout_x="459dp"
         android:layout_y="250dp"
         android:background="@drawable/bd_circle_shape"
+        android:scaleType="fitCenter"
         android:visibility="gone"
         tools:visibility="gone" />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="369dp"
+        android:layout_width="350dp"
         android:layout_height="250dp"
         android:layout_x="869dp"
         android:layout_y="250dp"
         android:background="@drawable/bd_circle_shape"
+        android:scaleType="fitCenter"
         android:visibility="gone"
         tools:visibility="gone" />
 
