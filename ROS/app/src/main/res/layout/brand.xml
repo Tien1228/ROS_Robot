@@ -212,32 +212,27 @@
         android:visibility="gone" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="219dp"
-        android:layout_y="662dp"
-        android:text="@string/mid"
-        android:textColor="#8377AC"
-        android:textIsSelectable="false"
-        android:textSize="50sp" />
-
-    <TextView
         android:id="@+id/txtAll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="250dp"
-        android:layout_y="662dp"
+        android:layout_x="815dp"
+        android:layout_y="624dp"
+        android:alpha="0.5"
+        android:text="66"
         android:textColor="#8377AC"
-        android:textSize="50sp" />
+        android:textSize="50sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txtThis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="157dp"
-        android:layout_y="662dp"
+        android:layout_x="411dp"
+        android:layout_y="624dp"
+        android:alpha="0.5"
+        android:text="22"
         android:textColor="#8377AC"
-        android:textSize="50sp" />
+        android:textSize="50sp"
+        android:textStyle="bold" />
 
 </AbsoluteLayout>

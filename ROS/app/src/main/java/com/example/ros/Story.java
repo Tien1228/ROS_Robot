@@ -45,7 +45,7 @@ public class Story extends Page {
 
 //        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
 //        buildViews();
-       videoView = findViewById(R.id.videoView1);
+        videoView = findViewById(R.id.videoView1);
         String VideoPath = "android.resource://" + getPackageName() + "/" + R.raw.video_intro;
         Log.d("Tag", VideoPath);
         Uri uri= Uri.parse(VideoPath);
