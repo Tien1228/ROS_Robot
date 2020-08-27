@@ -107,4 +107,13 @@
         android:background="@drawable/bd_circle_shape"
         tools:visibility="visible" />
 
+    <ImageView
+        android:id="@+id/btGoto"
+        android:layout_width="157dp"
+        android:layout_height="86dp"
+        android:layout_x="175dp"
+        android:layout_y="430dp"
+        android:foreground="@drawable/btgoto"
+        tools:src="@drawable/circle" />
+
 </AbsoluteLayout>

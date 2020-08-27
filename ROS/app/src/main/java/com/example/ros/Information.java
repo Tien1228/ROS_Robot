@@ -1,5 +1,6 @@
 package com.example.ros;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Build;
@@ -7,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -333,64 +335,82 @@ public class Information extends Page {
 
         imageView1.setOnClickListener(new OnClickListener(){
             public void onClick(View v){
-                Intent intent = new Intent();
-                intent.setClass(Information.this, InfoAct.class);
+                imageView1.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.btanim));
+                imageView1.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent intent = new Intent();
+                        intent.setClass(Information.this, InfoAct.class);
 
-                Bundle bundle1 = new Bundle();
-                bundle1.putString("NewsID", NewsID.get(a));
-                intent.putExtras(bundle1);
+                        Bundle bundle1 = new Bundle();
+                        bundle1.putString("NewsID", NewsID.get(a));
+                        intent.putExtras(bundle1);
 
-                Bundle bundle2 = new Bundle();
-                bundle2.putString("Content", Content.get(a));
-                intent.putExtras(bundle2);
+                        Bundle bundle2 = new Bundle();
+                        bundle2.putString("Content", Content.get(a));
+                        intent.putExtras(bundle2);
 
-                Bundle bundle3 = new Bundle();
-                bundle3.putString("INDEX_PIC_PATH", INDEX_PIC_PATH.get(a));
-                intent.putExtras(bundle3);
+                        Bundle bundle3 = new Bundle();
+                        bundle3.putString("INDEX_PIC_PATH", INDEX_PIC_PATH.get(a));
+                        intent.putExtras(bundle3);
 
-                startActivity(intent);
+                        startActivity(intent);
+                    }
+                }, 290);
             }
         });
 
         imageView2.setOnClickListener(new OnClickListener(){
             public void onClick(View v){
-                Intent intent = new Intent();
-                intent.setClass(Information.this, InfoAct.class);
+                imageView2.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.btanim));
+                imageView2.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent intent = new Intent();
+                        intent.setClass(Information.this, InfoAct.class);
 
-                Bundle bundle1 = new Bundle();
-                bundle1.putString("NewsID", NewsID.get(b));
-                intent.putExtras(bundle1);
+                        Bundle bundle1 = new Bundle();
+                        bundle1.putString("NewsID", NewsID.get(b));
+                        intent.putExtras(bundle1);
 
-                Bundle bundle2 = new Bundle();
-                bundle2.putString("Content", Content.get(b));
-                intent.putExtras(bundle2);
+                        Bundle bundle2 = new Bundle();
+                        bundle2.putString("Content", Content.get(b));
+                        intent.putExtras(bundle2);
 
-                Bundle bundle3 = new Bundle();
-                bundle3.putString("INDEX_PIC_PATH", INDEX_PIC_PATH.get(b));
-                intent.putExtras(bundle3);
+                        Bundle bundle3 = new Bundle();
+                        bundle3.putString("INDEX_PIC_PATH", INDEX_PIC_PATH.get(b));
+                        intent.putExtras(bundle3);
 
-                startActivity(intent);
+                        startActivity(intent);
+                    }
+                }, 290);
             }
         });
 
         imageView3.setOnClickListener(new OnClickListener(){
             public void onClick(View v){
-                Intent intent = new Intent();
-                intent.setClass(Information.this, InfoAct.class);
+                imageView3.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.btanim));
+                imageView3.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent intent = new Intent();
+                        intent.setClass(Information.this, InfoAct.class);
 
-                Bundle bundle1 = new Bundle();
-                bundle1.putString("NewsID", NewsID.get(c));
-                intent.putExtras(bundle1);
+                        Bundle bundle1 = new Bundle();
+                        bundle1.putString("NewsID", NewsID.get(c));
+                        intent.putExtras(bundle1);
 
-                Bundle bundle2 = new Bundle();
-                bundle2.putString("Content", Content.get(c));
-                intent.putExtras(bundle2);
+                        Bundle bundle2 = new Bundle();
+                        bundle2.putString("Content", Content.get(c));
+                        intent.putExtras(bundle2);
 
-                Bundle bundle3 = new Bundle();
-                bundle3.putString("INDEX_PIC_PATH", INDEX_PIC_PATH.get(c));
-                intent.putExtras(bundle3);
+                        Bundle bundle3 = new Bundle();
+                        bundle3.putString("INDEX_PIC_PATH", INDEX_PIC_PATH.get(c));
+                        intent.putExtras(bundle3);
 
-                startActivity(intent);
+                        startActivity(intent);
+                    }
+                }, 290);
             }
         });
 

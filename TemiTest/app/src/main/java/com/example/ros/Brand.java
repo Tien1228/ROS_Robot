@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -454,165 +455,189 @@ public class Brand extends Page {
 
         imageView1.setOnClickListener(new OnClickListener(){
             public void onClick(View v){
-                Intent intent = new Intent();
-                intent.setClass(Brand.this, Info.class);
+                imageView1.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.btanim));
+                imageView1.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent intent = new Intent();
+                        intent.setClass(Brand.this, Info.class);
 
-                Bundle bundle1 = new Bundle();
-                bundle1.putString("Logo", logo.get(a));
-                intent.putExtras(bundle1);
+                        Bundle bundle1 = new Bundle();
+                        bundle1.putString("Logo", logo.get(a));
+                        intent.putExtras(bundle1);
 
-                Bundle bundle2 = new Bundle();
-                bundle2.putString("Name", Name.get(a));
-                intent.putExtras(bundle2);
+                        Bundle bundle2 = new Bundle();
+                        bundle2.putString("Name", Name.get(a));
+                        intent.putExtras(bundle2);
 
-                Bundle bundle3 = new Bundle();
-                bundle3.putString("Zone", zone.get(a));
-                intent.putExtras(bundle3);
+                        Bundle bundle3 = new Bundle();
+                        bundle3.putString("Zone", zone.get(a));
+                        intent.putExtras(bundle3);
 
-                Bundle bundle4 = new Bundle();
-                bundle4.putString("Floor", floor.get(a));
-                intent.putExtras(bundle4);
+                        Bundle bundle4 = new Bundle();
+                        bundle4.putString("Floor", floor.get(a));
+                        intent.putExtras(bundle4);
 
 //                Bundle bundle5 = new Bundle();
 //                bundle5.putString("Content", content.get(a));
 //                intent.putExtras(bundle5);
 
-                Bundle bundle6 = new Bundle();
-                bundle6.putString("OpenTime", openTime.get(a));
-                intent.putExtras(bundle6);
+                        Bundle bundle6 = new Bundle();
+                        bundle6.putString("OpenTime", openTime.get(a));
+                        intent.putExtras(bundle6);
 
-                Bundle bundle7 = new Bundle();
-                bundle7.putString("StoreID", storeID.get(a));
-                intent.putExtras(bundle7);
+                        Bundle bundle7 = new Bundle();
+                        bundle7.putString("StoreID", storeID.get(a));
+                        intent.putExtras(bundle7);
 
-                Bundle bundle8 = new Bundle();
-                bundle8.putString("Big", big.get(a));
-                intent.putExtras(bundle8);
+                        Bundle bundle8 = new Bundle();
+                        bundle8.putString("Big", big.get(a));
+                        intent.putExtras(bundle8);
 
-                startActivity(intent);
+                        startActivity(intent);
+                    }
+                }, 290);
             }
         });
 
         imageView2.setOnClickListener(new OnClickListener(){
             public void onClick(View v){
-                Intent intent = new Intent();
-                intent.setClass(Brand.this, Info.class);
+                imageView2.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.btanim));
+                imageView2.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent intent = new Intent();
+                        intent.setClass(Brand.this, Info.class);
 
-                Bundle bundle1 = new Bundle();
-                bundle1.putString("Logo", logo.get(b));
-                intent.putExtras(bundle1);
+                        Bundle bundle1 = new Bundle();
+                        bundle1.putString("Logo", logo.get(b));
+                        intent.putExtras(bundle1);
 
-                Bundle bundle2 = new Bundle();
-                bundle2.putString("Name", Name.get(b));
-                intent.putExtras(bundle2);
+                        Bundle bundle2 = new Bundle();
+                        bundle2.putString("Name", Name.get(b));
+                        intent.putExtras(bundle2);
 
-                Bundle bundle3 = new Bundle();
-                bundle3.putString("Zone", zone.get(b));
-                intent.putExtras(bundle3);
+                        Bundle bundle3 = new Bundle();
+                        bundle3.putString("Zone", zone.get(b));
+                        intent.putExtras(bundle3);
 
-                Bundle bundle4 = new Bundle();
-                bundle4.putString("Floor", floor.get(b));
-                intent.putExtras(bundle4);
+                        Bundle bundle4 = new Bundle();
+                        bundle4.putString("Floor", floor.get(b));
+                        intent.putExtras(bundle4);
 
 //                Bundle bundle5 = new Bundle();
 //                bundle5.putString("Content", content.get(b));
 //                intent.putExtras(bundle5);
 
-                Bundle bundle6 = new Bundle();
-                bundle6.putString("OpenTime", openTime.get(b));
-                intent.putExtras(bundle6);
+                        Bundle bundle6 = new Bundle();
+                        bundle6.putString("OpenTime", openTime.get(b));
+                        intent.putExtras(bundle6);
 
-                Bundle bundle7 = new Bundle();
-                bundle7.putString("StoreID", storeID.get(a));
-                intent.putExtras(bundle7);
+                        Bundle bundle7 = new Bundle();
+                        bundle7.putString("StoreID", storeID.get(b));
+                        intent.putExtras(bundle7);
 
-                Bundle bundle8 = new Bundle();
-                bundle8.putString("Big", big.get(b));
-                intent.putExtras(bundle8);
+                        Bundle bundle8 = new Bundle();
+                        bundle8.putString("Big", big.get(b));
+                        intent.putExtras(bundle8);
 
-                startActivity(intent);
+                        startActivity(intent);
+                    }
+                }, 290);
             }
         });
 
         imageView3.setOnClickListener(new OnClickListener(){
             public void onClick(View v){
-                Intent intent = new Intent();
-                intent.setClass(Brand.this, Info.class);
+                imageView3.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.btanim));
+                imageView3.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent intent = new Intent();
+                        intent.setClass(Brand.this, Info.class);
 
-                Bundle bundle1 = new Bundle();
-                bundle1.putString("Logo", logo.get(c));
-                intent.putExtras(bundle1);
+                        Bundle bundle1 = new Bundle();
+                        bundle1.putString("Logo", logo.get(c));
+                        intent.putExtras(bundle1);
 
-                Bundle bundle2 = new Bundle();
-                bundle2.putString("Name", Name.get(c));
-                intent.putExtras(bundle2);
+                        Bundle bundle2 = new Bundle();
+                        bundle2.putString("Name", Name.get(c));
+                        intent.putExtras(bundle2);
 
-                Bundle bundle3 = new Bundle();
-                bundle3.putString("Zone", zone.get(c));
-                intent.putExtras(bundle3);
+                        Bundle bundle3 = new Bundle();
+                        bundle3.putString("Zone", zone.get(c));
+                        intent.putExtras(bundle3);
 
-                Bundle bundle4 = new Bundle();
-                bundle4.putString("Floor", floor.get(c));
-                intent.putExtras(bundle4);
+                        Bundle bundle4 = new Bundle();
+                        bundle4.putString("Floor", floor.get(c));
+                        intent.putExtras(bundle4);
 
 //                Bundle bundle5 = new Bundle();
 //                bundle5.putString("Content", content.get(c));
 //                intent.putExtras(bundle5);
 
-                Bundle bundle6 = new Bundle();
-                bundle6.putString("OpenTime", openTime.get(c));
-                intent.putExtras(bundle6);
+                        Bundle bundle6 = new Bundle();
+                        bundle6.putString("OpenTime", openTime.get(c));
+                        intent.putExtras(bundle6);
 
-                Bundle bundle7 = new Bundle();
-                bundle7.putString("StoreID", storeID.get(a));
-                intent.putExtras(bundle7);
+                        Bundle bundle7 = new Bundle();
+                        bundle7.putString("StoreID", storeID.get(c));
+                        intent.putExtras(bundle7);
 
-                Bundle bundle8 = new Bundle();
-                bundle8.putString("Big", big.get(c));
-                intent.putExtras(bundle8);
+                        Bundle bundle8 = new Bundle();
+                        bundle8.putString("Big", big.get(c));
+                        intent.putExtras(bundle8);
 
-                startActivity(intent);
+                        startActivity(intent);
+                    }
+                }, 290);
             }
         });
 
         imageView4.setOnClickListener(new OnClickListener(){
             public void onClick(View v){
-                Intent intent = new Intent();
-                intent.setClass(Brand.this, Info.class);
+                imageView4.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.btanim));
+                imageView4.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent intent = new Intent();
+                        intent.setClass(Brand.this, Info.class);
 
-                Bundle bundle1 = new Bundle();
-                bundle1.putString("Logo", logo.get(d));
-                intent.putExtras(bundle1);
+                        Bundle bundle1 = new Bundle();
+                        bundle1.putString("Logo", logo.get(d));
+                        intent.putExtras(bundle1);
 
-                Bundle bundle2 = new Bundle();
-                bundle2.putString("Name", Name.get(d));
-                intent.putExtras(bundle2);
+                        Bundle bundle2 = new Bundle();
+                        bundle2.putString("Name", Name.get(d));
+                        intent.putExtras(bundle2);
 
-                Bundle bundle3 = new Bundle();
-                bundle3.putString("Zone", zone.get(d));
-                intent.putExtras(bundle3);
+                        Bundle bundle3 = new Bundle();
+                        bundle3.putString("Zone", zone.get(d));
+                        intent.putExtras(bundle3);
 
-                Bundle bundle4 = new Bundle();
-                bundle4.putString("Floor", floor.get(d));
-                intent.putExtras(bundle4);
+                        Bundle bundle4 = new Bundle();
+                        bundle4.putString("Floor", floor.get(d));
+                        intent.putExtras(bundle4);
 
 //                Bundle bundle5 = new Bundle();
 //                bundle5.putString("Content", content.get(d));
 //                intent.putExtras(bundle5);
 
-                Bundle bundle6 = new Bundle();
-                bundle6.putString("OpenTime", openTime.get(d));
-                intent.putExtras(bundle6);
+                        Bundle bundle6 = new Bundle();
+                        bundle6.putString("OpenTime", openTime.get(d));
+                        intent.putExtras(bundle6);
 
-                Bundle bundle7 = new Bundle();
-                bundle7.putString("StoreID", storeID.get(a));
-                intent.putExtras(bundle7);
+                        Bundle bundle7 = new Bundle();
+                        bundle7.putString("StoreID", storeID.get(d));
+                        intent.putExtras(bundle7);
 
-                Bundle bundle8 = new Bundle();
-                bundle8.putString("Big", big.get(d));
-                intent.putExtras(bundle8);
+                        Bundle bundle8 = new Bundle();
+                        bundle8.putString("Big", big.get(d));
+                        intent.putExtras(bundle8);
 
-                startActivity(intent);
+                        startActivity(intent);
+                    }
+                }, 290);
             }
         });
 

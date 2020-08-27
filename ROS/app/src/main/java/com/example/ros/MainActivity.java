@@ -1,15 +1,14 @@
 package com.example.ros;
 
 import android.app.Activity;
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.transition.Fade;
+import android.transition.TransitionInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.animation.AlphaAnimation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.annotation.RequiresApi;
@@ -90,7 +89,7 @@ public class MainActivity extends Activity {
                     public void run() {
                         Intent intent = new Intent();
                         intent.setClass(MainActivity.this, Location.class);
-                        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(MainActivity.this).toBundle());
+                        startActivity(intent);
                     }
                 }, 290);
             }

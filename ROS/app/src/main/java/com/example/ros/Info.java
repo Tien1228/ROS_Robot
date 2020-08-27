@@ -1,10 +1,12 @@
 package com.example.ros;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -26,13 +28,13 @@ public class Info extends Page{
     private TextView txtName;
     private TextView txtLocation;
     private TextView txtOpenTime;
-//    private TextView txtContent;
     private ImageView imageQRcode;
     private ImageView imageLogo;
     private ImageView imageBackground;
     private ImageView imageBig;
     private ImageView btCancel;
     private LinearLayout lay;
+    private ImageView btGoto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +85,7 @@ public class Info extends Page{
         imageBackground = (ImageView)findViewById(R.id.imageBackground);
         imageBig = (ImageView)findViewById(R.id.imageBig);
         btCancel = (ImageView)findViewById(R.id.btCancel);
+        btGoto = (ImageView)findViewById(R.id.btGoto);
 
         ViewCompat.setElevation(imageBackground, 12);
         ViewCompat.setElevation(lay, 15);
@@ -94,6 +97,13 @@ public class Info extends Page{
         ViewCompat.setElevation(imageLogo, 15);
         ViewCompat.setElevation(imageBig, 15);
         ViewCompat.setElevation(btCancel, 15);
+        ViewCompat.setElevation(btGoto, 15);
+
+        if(Zone.equals("A") && Floor.equals("4F")){
+            btGoto.setVisibility(View.VISIBLE);
+        }else {
+            btGoto.setVisibility(View.GONE);
+        }
 
         txtName.setText("專櫃名稱：" + Name);
         txtOpenTime.setText("營業時間：" + OpenTime);
@@ -107,6 +117,18 @@ public class Info extends Page{
         btCancel.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 finish();
+            }
+        });
+
+        btGoto.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                btGoto.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.btanim));
+                btGoto.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        
+                    }
+                }, 290);
             }
         });
     }
